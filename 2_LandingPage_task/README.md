@@ -13,8 +13,8 @@ This is a responsive landing page built with only **HTML** and **CSS**, created 
 
 - Home Page (Navbar and main content)
 
-![alt text](screenshots/image.png)
+![Screenshot of home page](screenshots/image.png)
 
-``` ```
 - Footer
-![alt text](screenshots/image-1.png)
+
+![Screenshot showing footer](screenshots/image-1.png)
