@@ -1,0 +1,26 @@
+/* For centering on screen */
+.box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Outer div */
+.outerbox {
+    width: 500px;
+    height: 500px;
+    border: 1px solid;
+    position: relative;
+}
+
+/* Inner div */
+.innerbox {
+    width: 200px;
+    height: 200px;
+    background: red;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}

@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: arial, sans-serif;
+}
+
+body {
+  background-color: #ebeff2;
+  color: #222;
+}
+
+/* NavBar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: #000;
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: orangered;
+  cursor: pointer;
+}
+
+.navbar .nav-menus {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar .nav-menus a {
+  text-decoration: none;
+  color: #000;
+  transition: all 0.3s ease;
+}
+
+.navbar .nav-menus a:hover {
+  color: orangered;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+.hero h1 span {
+  color: orangered;
+}
+.hero button {
+  color: orangered;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+  cursor: pointer;
+  border: 2px solid orangered;
+}
+.hero button:hover {
+  background-color: orangered;
+  color: #fff;
+}
+
+/* Footer */
+footer {
+  background-color: rgb(155, 155, 155);
+  padding: 2rem;
+  font-size: 0.9rem;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  height: 250px;
+}
+footer .left {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer .right {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+footer .right a {
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+footer .right a:hover {
+    color: #000;
+}
+
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar .nav-menus {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+.hero {
+    height: 90vh;
+}
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: auto;
+  }
+
+  footer .left,
+  footer .right {
+    width: 100%;
+  }
+}
