@@ -4,10 +4,14 @@
   box-sizing: border-box;
   font-family: arial, sans-serif;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 body {
   background-color: #ebeff2;
   color: #222;
+  max-width: 1280px;
+  margin: auto;
 }
 
 /* NavBar */
@@ -76,6 +80,95 @@ body {
   color: #fff;
 }
 
+
+/* Features Section */
+.feature {
+  padding: 1rem;
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+.feature h1{
+  color: orangered;
+}
+.feature .feature-box {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  padding: 2rem;
+  margin: 1rem;
+}
+.feature .feature-box .inside-box {
+  width: 250px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px gray solid;
+  border-radius: 5px;
+  background: rgb(240, 212, 162);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+.feature .feature-box .inside-box:hover {
+  transform: scale(1.05);
+}
+.feature .feature-box .inside-box i {
+  font-size: 2rem;
+  color: orangered;
+}
+.feature .feature-box .inside-box h4 {
+  padding: 1rem;
+}
+
+
+/* About Section */
+.about{
+  padding: 1rem;
+  height: 100vh;
+  text-align: center;
+}
+.about h1{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  color: orangered;
+  
+}
+.about p {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  font-size: large;
+}
+
+/* Contact Section */
+.contact{
+  padding: 1rem;
+  height: 100vh;
+  text-align: center;
+}
+.contact h1{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  color: orangered;
+}
+.contact p{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.contact form textarea {
+  width: 500px;
+  height: 250px;
+}
+
+
+
+
+
 /* Footer */
 footer {
   background-color: rgb(155, 155, 155);
@@ -84,28 +177,9 @@ footer {
   color: #fff;
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 1rem;
   height: 250px;
-}
-footer .left {
-  width: 60%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-footer .right {
-  width: 40%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-footer .right a {
-  text-decoration: none;
-  color: #fff;
-  transition: all 0.3s ease;
-}
-footer .right a:hover {
-    color: #000;
 }
 
 
