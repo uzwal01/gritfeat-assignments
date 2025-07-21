@@ -27,7 +27,7 @@ This is a responsive landing page built with only **HTML** and **CSS**, created 
 
 - Contact
 
-![Contact Page](screenshots/image-3.png)
+![Contact](screenshots/image-3.png)
 
 - Footer
 
