@@ -52,12 +52,12 @@ The project showcases a mobile-friendly navbar with a pure CSS toggle menu.
 
 ---
 
-- Mobile Responsives
+- Mobile Responsive
 
 ![Home](screenshots/m1.png)
 ![Mobile menu](screenshots/m2-menu-toggle.png)
 ![projects](screenshots/m3.png)
 ![contact](screenshots/m4.png)
 
-
+---
 
