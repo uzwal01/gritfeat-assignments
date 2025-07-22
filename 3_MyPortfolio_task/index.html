@@ -1,76 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>My Portfolio</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter&family=Poppins:wght@400;600&display=swap"
-    rel="stylesheet"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
-  />
-  <style>
-    body {
-      font-family: "Poppins", sans-serif;
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>My Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Poppins:wght@400;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+        }
+    </style>
 </head>
+
 <body class="bg-gray-50 text-gray-800">
+    <!-- NAVBAR -->
+    <nav class="bg-white shadow-md sticky top-0 z-50 relative">
+        <div class="max-w-[1280px] mx-auto px-4 py-4 flex justify-between items-center relative">
+            <!-- Logo -->
+            <a href="#hero" class="text-2xl font-semibold text-blue-600">UD</a>
 
-<nav class="bg-white shadow-md sticky top-0 z-50 relative">
-  <div class="max-w-[1280px] mx-auto px-4 py-4 flex justify-between items-center relative">
-    <!-- Logo -->
-    <a href="#hero" class="text-2xl font-semibold text-blue-600">UD</a>
+            <!-- Desktop Navbar -->
+            <ul class="hidden md:flex space-x-6 text-gray-700">
+                <li>
+                    <a href="#about" class="hover:text-blue-600 transition">About</a>
+                </li>
+                <li>
+                    <a href="#skills" class="hover:text-blue-600 transition">Skills</a>
+                </li>
+                <li>
+                    <a href="#projects" class="hover:text-blue-600 transition">Projects</a>
+                </li>
+                <li>
+                    <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
+                </li>
+            </ul>
 
-    <!-- Desktop Navbar -->
-    <ul class="hidden md:flex space-x-6 text-gray-700">
-      <li><a href="#about" class="hover:text-blue-600 transition">About</a></li>
-      <li><a href="#skills" class="hover:text-blue-600 transition">Skills</a></li>
-      <li><a href="#projects" class="hover:text-blue-600 transition">Projects</a></li>
-      <li><a href="#contact" class="hover:text-blue-600 transition">Contact</a></li>
-    </ul>
+            <!-- Mobile menu wrapper with checkbox and menu as siblings -->
+            <div class="md:hidden relative flex items-center">
+                <!-- Hidden checkbox (peer) -->
+                <input type="checkbox" id="menu-toggle" class="peer hidden" />
 
-    <!-- Mobile menu wrapper with checkbox and menu as siblings -->
-    <div class="md:hidden relative flex items-center">
-      <!-- Hidden checkbox (peer) -->
-      <input type="checkbox" id="menu-toggle" class="peer hidden" />
+                <!-- Hamburger Icon -->
+                <label for="menu-toggle"
+                    class="cursor-pointer text-gray-700 peer-checked:hidden block z-50 hover:text-blue-600 transition">
+                    <i class="bi bi-list text-3xl"></i>
+                </label>
 
-      <!-- Hamburger Icon -->
-      <label
-        for="menu-toggle"
-        class="cursor-pointer text-gray-700 peer-checked:hidden block z-50 hover:text-blue-600 transition"
-      >
-        <i class="bi bi-list text-3xl"></i>
-      </label>
+                <!-- Close Icon -->
+                <label for="menu-toggle"
+                    class="cursor-pointer text-gray-700 hidden peer-checked:block z-50 hover:text-red-600 transition">
+                    <i class="bi bi-x-lg text-3xl"></i>
+                </label>
 
-      <!-- Close Icon -->
-      <label
-        for="menu-toggle"
-        class="cursor-pointer text-gray-700 hidden peer-checked:block z-50 hover:text-red-600 transition"
-      >
-        <i class="bi bi-x-lg text-3xl"></i>
-      </label>
-
-      <!-- For Mobile Menu links -->
-      <div
-        class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform translate-x-full peer-checked:translate-x-0 transition-transform duration-300 ease-in-out z-40"
-      >
-        <div class="p-6 mt-12">
-          <ul class="flex flex-col space-y-6 text-gray-800 text-lg">
-            <li><a href="#about" class="hover:text-blue-600 transition">About</a></li>
-            <li><a href="#skills" class="hover:text-blue-600 transition">Skills</a></li>
-            <li><a href="#projects" class="hover:text-blue-600 transition">Projects</a></li>
-            <li><a href="#contact" class="hover:text-blue-600 transition">Contact</a></li>
-          </ul>
+                <!-- For Mobile Menu links -->
+                <div
+                    class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform translate-x-full peer-checked:translate-x-0 transition-transform duration-300 ease-in-out z-40">
+                    <div class="p-6 mt-12">
+                        <ul class="flex flex-col space-y-6 text-gray-800 text-lg">
+                            <li>
+                                <a href="#about" class="hover:text-blue-600 transition">About</a>
+                            </li>
+                            <li>
+                                <a href="#skills" class="hover:text-blue-600 transition">Skills</a>
+                            </li>
+                            <li>
+                                <a href="#projects" class="hover:text-blue-600 transition">Projects</a>
+                            </li>
+                            <li>
+                                <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-</nav>
+    </nav>
 
+    <!-- HERO SECTION -->
+    <section id="hero" class="min-h-screen flex flex-col items-center justify-center bg-gray-50">
+        <div class="max-w-[1280px] mx-auto px-4 text-center">
+            <p class="text-md mb-4 text-gray-700 uppercase">Let's build something together</p>
+            <h1 class="text-5xl font-semibold mb-4">Hi, I'm <span class="text-blue-600">Ujjwal</span> </h1>
+            <h1 class="text-5xl font-semibold mb-4">A Computer Engineer</h1>
+            <p class="text-sm mb-4 text-gray-700">I'm a Web developer specializing in building (and occasionally
+                designing) exceptional digital experiences. Currently, I'm focused on building responsive front-end web
+                applications while learning back-end technologies.</p>
+        </div>
+        <div class="flex space-x-4 mt-4">
+            <div
+                class="w-full sm:w-[100%] bg-white shadow-md px-5 py-4 rounded-[100%] hover:scale-[1.1] transition duration-300 cursor-pointer">
+                <a href="#linkedin"><i class="bi bi-linkedin text-lg text-blue-600"></i></a>
+            </div>
+            <div
+                class="w-full sm:w-[100%] bg-white shadow-md px-5 py-4 rounded-[100%] hover:scale-[1.1] transition duration-300 cursor-pointer">
+                <a href="#github"><i class="bi bi-github text-xl text-blue-600"></i></a>
+            </div>
+            <div
+                class="w-full sm:w-[100%] bg-white shadow-md px-5 py-4 rounded-[100%] hover:scale-[1.1] transition duration-300 cursor-pointer">
+                <a href="#mail"><i class="bi bi-envelope-at-fill text-xl text-blue-600"></i></a>
+            </div>
+            <div
+                class="w-full sm:w-[100%] bg-blue-600 shadow-md px-5 py-4 rounded-[100%] hover:scale-[1.1] transition duration-300 cursor-pointer">
+                <a href="#resume"><i class="bi bi-person-vcard-fill text-xl text-white"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-16 bg-white min-h-screen flex flex-col justify-center">
+        <div class="max-w-[1280px] mx-auto px-4 ">
+            
+            <h2 class="text-2xl font-thin text-blue-600">ABOUT</h2>
+            <h3 class="text-gray-700 text-4xl mt-3 mb-3">Who I Am</h3>
+            <p class="mb-2 text-gray-700 text-justify sm:text-left">Hi, I’m Ujjwal Duwal, a recent Computer Engineering graduate from Khwopa Engineering College and a web
+                and software development enthusiast. I’m passionate about technology and love exploring how things work
+                behind the scenes. I thrive on learning new concepts, building creative solutions, and staying
+                up-to-date with the latest trends in tech.</p>
+
+                <p class="mb-2 text-gray-700 text-justify sm:text-left">I’m detail-oriented, balancing creativity with technical problem-solving, and always eager to grow and
+                carve a successful path in the tech world. Above all, I’m driven to contribute to impactful projects
+                that make a difference. I am now spending my time building projects with React/Next JS and learning new
+                technologies.</p>
+
+                <a href="#projects"><p class="underline text-gray-700 mt-4">Check out some of my latest projects.</p></a>
+            
+        </div>
+    </section>
+
+<!-- SKILLS SECTION -->
+    <section id="skills" class="py-16 bg-gray-50 min-h-screen">
+        <div class="max-w-[1280px] mx-auto px-4 my-6">
+            <h2 class="text-2xl font-thin text-blue-600">SKILLS</h2>
+            <h3 class="text-gray-700 text-4xl mt-3 mb-3">What I Can Do</h3>
+            <div class="grid grid-flow-rows grid-cols-4 gap-4">
+                <div class="py-4 flex items-center gap-4 border shadow-lg rounded hover:scale-[1.05] transition duration-300">
+                    <div class="w-[50%] flex justify-center"><image src="/3_MyPortfolio_task/skill-icons/html.png" class="w-[80px]"/></div>
+                    <div class="w-[50%] text-center text-lg font-bold"><h4>HTML</h4></div>
+                </div>
+
+                <div class="py-4 flex items-center gap-4 border shadow-lg rounded hover:scale-[1.05] transition duration-300">
+                    <div class="w-[50%] flex justify-center"><image src="/3_MyPortfolio_task/skill-icons/css.png" class="w-[80px]"/></div>
+                    <div class="w-[50%] text-center text-lg font-bold"><h4>HTML</h4></div>
+                </div>
+
+                <div class="py-4 flex items-center gap-4 border shadow-lg rounded hover:scale-[1.05] transition duration-300">
+                    <div class="w-[50%] flex justify-center"><image src="/3_MyPortfolio_task/skill-icons/javascript.png" class="w-[80px]"/></div>
+                    <div class="w-[50%] text-center text-lg font-bold"><h4>CSS</h4></div>
+                </div>
+
+                <div class="py-4 flex items-center gap-4 border shadow-lg rounded hover:scale-[1.05] transition duration-300">
+                    <div class="w-[50%] flex justify-center"><image src="/3_MyPortfolio_task/skill-icons/react.png" class="w-[80px]"/></div>
+                    <div class="w-[50%] text-center text-lg font-bold"><h4>REACT</h4></div>
+                </div>
+
+                <div class="py-4 flex items-center gap-4 border shadow-lg rounded hover:scale-[1.05] transition duration-300">
+                    <div class="w-[50%] flex justify-center"><image src="/3_MyPortfolio_task/skill-icons/nextjs.png" class="w-[80px]"/></div>
+                    <div class="w-[50%] text-center text-lg font-bold"><h4>NEXT</h4></div>
+                </div>
+
+                <div class="py-4 flex items-center gap-4 border shadow-lg rounded hover:scale-[1.05] transition duration-300">
+                    <div class="w-[50%] flex justify-center"><image src="/3_MyPortfolio_task/skill-icons/node.png" class="w-[80px]"/></div>
+                    <div class="w-[50%] text-center text-lg font-bold"><h4>NODE</h4></div>
+                </div>
+
+                <div class="py-4 flex items-center gap-4 border shadow-lg rounded hover:scale-[1.05] transition duration-300">
+                    <div class="w-[50%] flex justify-center"><image src="/3_MyPortfolio_task/skill-icons/tailwind.png" class="w-[80px]"/></div>
+                    <div class="w-[50%] text-center text-lg font-bold"><h4>TAILWIND</h4></div>
+                </div>
+
+                <div class="py-4 flex items-center gap-4 border shadow-lg rounded hover:scale-[1.05] transition duration-300">
+                    <div class="w-[50%] flex justify-center"><image src="/3_MyPortfolio_task/skill-icons/bootstrap.png" class="w-[80px]"/></div>
+                    <div class="w-[50%] text-center text-lg font-bold"><h4>BOOTSTRAP</h4></div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
 </body>
+
 </html>
