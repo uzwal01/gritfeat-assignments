@@ -20,11 +20,13 @@ The project showcases a mobile-friendly navbar with a pure CSS toggle menu.
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/uzwal01/gritfeat-assignments/tree/main/3_MyPortfolio_task
+   git clone https://github.com/uzwal01/gritfeat-assignments.git
 
-2. Open the index.html file in your preferred browser.
+2. Open the 3_MyPortfolio_task file from the cloned folder.
 
-3. Customize content, styles, and sections as needed.
+3. Open the index.html file in your preferred browser.
+
+4. Customize content, styles, and sections as needed.
 
 ---
 
