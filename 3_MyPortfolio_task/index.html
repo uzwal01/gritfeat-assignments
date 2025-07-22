@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter&family=Poppins:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+  />
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+<nav class="bg-white shadow-md sticky top-0 z-50 relative">
+  <div class="max-w-[1280px] mx-auto px-4 py-4 flex justify-between items-center relative">
+    <!-- Logo -->
+    <a href="#hero" class="text-2xl font-semibold text-blue-600">UD</a>
+
+    <!-- Desktop Navbar -->
+    <ul class="hidden md:flex space-x-6 text-gray-700">
+      <li><a href="#about" class="hover:text-blue-600 transition">About</a></li>
+      <li><a href="#skills" class="hover:text-blue-600 transition">Skills</a></li>
+      <li><a href="#projects" class="hover:text-blue-600 transition">Projects</a></li>
+      <li><a href="#contact" class="hover:text-blue-600 transition">Contact</a></li>
+    </ul>
+
+    <!-- Mobile menu wrapper with checkbox and menu as siblings -->
+    <div class="md:hidden relative flex items-center">
+      <!-- Hidden checkbox (peer) -->
+      <input type="checkbox" id="menu-toggle" class="peer hidden" />
+
+      <!-- Hamburger Icon -->
+      <label
+        for="menu-toggle"
+        class="cursor-pointer text-gray-700 peer-checked:hidden block z-50 hover:text-blue-600 transition"
+      >
+        <i class="bi bi-list text-3xl"></i>
+      </label>
+
+      <!-- Close Icon -->
+      <label
+        for="menu-toggle"
+        class="cursor-pointer text-gray-700 hidden peer-checked:block z-50 hover:text-red-600 transition"
+      >
+        <i class="bi bi-x-lg text-3xl"></i>
+      </label>
+
+      <!-- For Mobile Menu links -->
+      <div
+        class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform translate-x-full peer-checked:translate-x-0 transition-transform duration-300 ease-in-out z-40"
+      >
+        <div class="p-6 mt-12">
+          <ul class="flex flex-col space-y-6 text-gray-800 text-lg">
+            <li><a href="#about" class="hover:text-blue-600 transition">About</a></li>
+            <li><a href="#skills" class="hover:text-blue-600 transition">Skills</a></li>
+            <li><a href="#projects" class="hover:text-blue-600 transition">Projects</a></li>
+            <li><a href="#contact" class="hover:text-blue-600 transition">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+</body>
+</html>
