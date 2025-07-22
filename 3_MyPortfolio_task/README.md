@@ -42,7 +42,7 @@ The project showcases a mobile-friendly navbar with a pure CSS toggle menu.
 
 - Skills Section
 
-![Skills](screenshots/about.png)
+![Skills](screenshots/skills.png)
 
 - Projects Section
 
