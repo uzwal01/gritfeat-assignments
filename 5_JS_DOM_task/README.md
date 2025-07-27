@@ -40,17 +40,20 @@ Document
 
 ### 3. Accessing the DOM
 
-- The `document` object is the root of the DOM in JavaScript.
+- The `document` object is the entry point to interact with the DOM using JavaScript.
+
+- It represents the entire web page and provides methods to select, inspect, and manipulate elements.
 
 **_Common DOM Selection Methods:_**
 
-| Method                          | Description                                                   |
-| ------------------------------- | ------------------------------------------------------------- |
-| `getElementById(id)`            | Selects an element by its ID                                  |
-| `getElementsByClassName(class)` | Returns a live HTMLCollection of all elements with that class |
-| `getElementsByTagName(tag)`     | Returns elements by tag name                                  |
-| `querySelector(selector)`       | Returns the first element that matches the CSS selector       |
-| `querySelectorAll(selector)`    | Returns a static NodeList of all matching elements            |
+| Method                          | Description                                                                                       |
+| ------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `getElementById(id)`            | Returns the **first element** with the specified `id`. Fast and commonly used.                    |
+| `getElementsByClassName(class)` | Returns a **live HTMLCollection** of all elements with the given class name.                      |
+| `getElementsByTagName(tag)`     | Returns all elements with the specified tag name (e.g., `div`, `p`).                              |
+| `querySelector(selector)`       | Returns the **first element** that matches a **CSS selector** (e.g., `#id`, `.class`, `div > p`). |
+| `querySelectorAll(selector)`    | Returns a **static NodeList** of **all** elements that match the CSS selector.                    |
+
 
 - Example:
 
@@ -75,12 +78,16 @@ Document
 **Add/Remove CSS Classes:**
 
 ```js
-    element.classList.add("active");
-    element.classList.remove("hidden");
-    element.classList.toggle("highlight");
+    element.classList.add("active");                // Adds a class without removing existing ones.
+    element.classList.remove("hidden");             // Removes a specific class.
+    element.classList.toggle("highlight");          // Adds the class if it's missing, or removes it if it's present.
 ```
 
 **Get Computed Styles:**
+
+* Retrieves the final computed CSS value of an element — including styles from external stylesheets and inherited styles.
+
+* Useful when you want to read actual styles applied to an element, not just inline ones.
 
 ```js
     let color = window.getComputedStyle(element).color;
@@ -90,7 +97,7 @@ Document
 
 ### 5. DOM Forms
 
-- Used to access and manipulate HTML form elements.
+- Used to access, read, and manipulate form elements like inputs, checkboxes, selects, and the form itself.
 
 **Access Form Fields:**
 
@@ -109,11 +116,17 @@ Document
 
 **Other Form-Related Properties:**
 
-- `form.elements` – all form controls
+- `form.elements` – A collection of all input fields, textareas, selects, and buttons in the form.
 
-- `form.action` – the action URL
+- `form.action` – The URL where the form data will be submitted (as defined in HTML).
 
-- `form.method` – GET or POST
+- `form.method` – The HTTP method used for submission, either `"GET"` or `"POST"`.
+
+These properties allow you to inspect or change form behavior dynamically:
+```js
+    form.action = "https://api.example.com/submit";
+    form.method = "POST";
+```
 
 **Validating Forms:**
 
@@ -125,36 +138,49 @@ Document
         }
     });
 ```
+* Attach a `submit` event listener to validate input before sending the form.
+
+* `e.preventDefault()` stops the form from submitting if validation fails.
+
+* This is useful for client-side form validation, ensuring better UX before server processing.
 
 ---
 
 ### 6. DOM Events
 
-- Events are actions that occur in the browser.
-- Example:- `click`, `hover`, `input`, etc.
+- DOM events are interactions or changes that happen in the browser, either triggered by the user (e.g., clicking a button) or by the browser itself (e.g., page loading).
+- Events let JavaScript respond to user actions and make web pages interactive.
+- Example:- `click`, `hover`, `input`, `submit`, etc.
 
-**Add Event Listener:**
 
+**Add Event Listener: `addEventListener(event, handler)`**
 
+* Registers a callback function that runs when the specified event occurs.
+* Example:
 ```js
     element.addEventListener("click", function() {
         alert("Clicked!");
     });
 ```
 
-
 **Common Event Types:**
 
-- `click`, `dblclick`
+- `click`, `dblclick`: Mouse click interactions
 
-- `mouseover`, `mouseout`
+- `mouseover`, `mouseout`: Hovering in/out of elements
 
-- `keydown`, `keyup`, `keypress`
+- `keydown`, `keyup`, `keypress`: Keyboard interactions
 
-- `submit`, `change`, `focus`, `blur`
+- `submit`: Form submission
 
-**Remove Event Listener:**
+- `change`: Value change in input/select elements
 
+- `focus`, `blur`: When an element gains or loses focus
+
+
+**Remove Event Listener: `removeEventListener(event, handler)`**
+
+* Detaches a previously attached event listener, using the same function reference.
 
 ```js
     function handleClick() {
@@ -170,6 +196,7 @@ Document
 ### 7. DOM Manipulation
 * DOM manipulation means changing the structure, content, or style of HTML elements using JavaScript after the page has loaded.
 * It allows dynamic interactivity like adding/removing content, updating UI, etc.
+
 **Changing Text or HTML:**
 * Example:
 ```js
