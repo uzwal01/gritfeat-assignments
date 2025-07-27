@@ -13,26 +13,26 @@
 - The DOM represents the HTML document as a tree of nodes.
 - Example:
 
-<pre>
+
 ```html
-<html>
-  <body>
-    <p>Hello</p>
-  </body>
-</html> 
+    <html>
+        <body>
+            <p>Hello</p>
+        </body>
+    </html> 
 ```
-</pre>
 
 ---
 
 turns into:
-
-<!-- Document
+```html
+Document
 └── <html>
-├── <head>
-└── <body>
-├── <h1>
-└── <p> -->
+        ├── <head>
+        └── <body>
+                ├── <h1>
+                └── <p>
+```
 
 - Each HTML element becomes an element node.
 - Text inside elements becomes a text node.
@@ -88,17 +88,18 @@ turns into:
 
 **Access Form Fields:**
 
-<pre>
+```html
     <form id="myForm">
         <input type="text" name="username" />
         <input type="submit" />
     </form>
-</pre>
+```
 
-<pre>
-    ```const form = document.getElementById("myForm");
+
+```js
+    const form = document.getElementById("myForm");
     console.log(form.elements["username"].value);```
-</pre>
+```
 
 **Other Form-Related Properties:**
 
@@ -110,14 +111,14 @@ turns into:
 
 **Validating Forms:**
 
-<pre>
-    ```form.addEventListener("submit", function(e) {
-  if (form.elements["username"].value === "") {
-    alert("Username is required!");
-    e.preventDefault(); // Stop form submission
-  }
-});```
-</pre>
+```js
+    form.addEventListener("submit", function(e) {
+        if (form.elements["username"].value === "") {
+            alert("Username is required!");
+            e.preventDefault(); // Stop form submission
+        }
+    });
+```
 
 ---
 
@@ -128,12 +129,13 @@ turns into:
 
 **Add Event Listener:**
 
-<pre>
-    ```element.addEventListener("click", function() {
-  alert("Clicked!");
-});```
 
-</pre>
+```js
+    element.addEventListener("click", function() {
+        alert("Clicked!");
+    });
+```
+
 
 **Common Event Types:**
 
@@ -163,25 +165,32 @@ turns into:
 
 **Changing Text or HTML:**
 
-- `element.textContent = "New Text";`
-- `element.innerHTML = "<strong>Bold Text</strong>";`
+```
+    element.textContent = "New Text";
+    element.innerHTML = "<strong>Bold Text</strong>";
+```
 
 **Create / Add Elements:**
 
-<pre>
-    ```const newDiv = document.createElement("div");
-newDiv.textContent = "Hello!";
-document.body.appendChild(newDiv);```
 
-</pre>
+```
+    const newDiv = document.createElement("div");
+    newDiv.textContent = "Hello!";
+    document.body.appendChild(newDiv);
+```
+
 
 **Remove Elements:**
 
-- `element.remove();`
+```
+    element.remove();
+```
 
 **Replace Elements:**
 
-- `parent.replaceChild(newElement, oldElement);`
+```
+    parent.replaceChild(newElement, oldElement);
+```
 
 ---
 
