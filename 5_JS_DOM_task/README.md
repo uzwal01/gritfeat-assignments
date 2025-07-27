@@ -1,6 +1,6 @@
 # JavaScript DOM
 
-#### 1. What is **DOM**?
+### 1. What is **DOM**?
 
 - DOM (Document Object Model) is a programming interface for HTML and XML documents.
 - It represents the structure of a document as a tree of nodes (`elements`, `text`, `attributes`, etc.).
@@ -38,7 +38,7 @@ Document
 
 ---
 
-#### 3. Accessing the DOM
+### 3. Accessing the DOM
 
 - The `document` object is the root of the DOM in JavaScript.
 
@@ -61,7 +61,7 @@ Document
 
 ---
 
-#### 4. DOM CSS
+### 4. DOM CSS
 
 - We can change the style of elements dynamically using JS.
 
@@ -88,7 +88,7 @@ Document
 
 ---
 
-#### 5. DOM Forms
+### 5. DOM Forms
 
 - Used to access and manipulate HTML form elements.
 
@@ -128,7 +128,7 @@ Document
 
 ---
 
-#### 6. DOM Events
+### 6. DOM Events
 
 - Events are actions that occur in the browser.
 - Example:- `click`, `hover`, `input`, etc.
@@ -167,7 +167,7 @@ Document
 
 ---
 
-#### 7. DOM Manipulation
+### 7. DOM Manipulation
 
 **Changing Text or HTML:**
 
@@ -200,4 +200,4 @@ Document
 
 ---
 
-#### 8. Attributes and Properties
+### 8. Attributes and Properties
