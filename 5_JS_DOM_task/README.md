@@ -1,6 +1,6 @@
 # JavaScript DOM
 
-1. What is **DOM**?
+#### 1. What is **DOM**?
 
 - DOM (Document Object Model) is a programming interface for HTML and XML documents.
 - It represents the structure of a document as a tree of nodes (`elements`, `text`, `attributes`, etc.).
@@ -22,8 +22,6 @@
     </html> 
 ```
 
----
-
 turns into:
 ```html
 Document
@@ -40,7 +38,7 @@ Document
 
 ---
 
-3. Accessing the DOM
+#### 3. Accessing the DOM
 
 - The `document` object is the root of the DOM in JavaScript.
 
@@ -56,33 +54,41 @@ Document
 
 - Example:
 
-`const title = document.getElementById("mainTitle");`
-`const buttons = document.querySelectorAll(".btn");`
+```js 
+    const title = document.getElementById("mainTitle");
+    const buttons = document.querySelectorAll(".btn");
+```
 
 ---
 
-4. DOM CSS
+#### 4. DOM CSS
 
 - We can change the style of elements dynamically using JS.
 
 **Inline Style Manipulation:**
 
-- `element.style.color = "red";`
-- `element.style.backgroundColor = "yellow";`
+```js
+    element.style.color = "red";
+    element.style.backgroundColor = "yellow";
+```
 
 **Add/Remove CSS Classes:**
 
-- `element.classList.add("active");`
-- `element.classList.remove("hidden");`
-- `element.classList.toggle("highlight");`
+```js
+    element.classList.add("active");
+    element.classList.remove("hidden");
+    element.classList.toggle("highlight");
+```
 
 **Get Computed Styles:**
 
-- `let color = window.getComputedStyle(element).color;`
+```
+    let color = window.getComputedStyle(element).color;
+```
 
 ---
 
-5. DOM Forms
+#### 5. DOM Forms
 
 - Used to access and manipulate HTML form elements.
 
@@ -122,7 +128,7 @@ Document
 
 ---
 
-6. DOM Events
+#### 6. DOM Events
 
 - Events are actions that occur in the browser.
 - Example:- `click`, `hover`, `input`, etc.
@@ -161,11 +167,11 @@ Document
 
 ---
 
-7. DOM Manipulation
+#### 7. DOM Manipulation
 
 **Changing Text or HTML:**
 
-```
+```js
     element.textContent = "New Text";
     element.innerHTML = "<strong>Bold Text</strong>";
 ```
@@ -173,7 +179,7 @@ Document
 **Create / Add Elements:**
 
 
-```
+```js
     const newDiv = document.createElement("div");
     newDiv.textContent = "Hello!";
     document.body.appendChild(newDiv);
@@ -182,16 +188,16 @@ Document
 
 **Remove Elements:**
 
-```
+```js
     element.remove();
 ```
 
 **Replace Elements:**
 
-```
+```js
     parent.replaceChild(newElement, oldElement);
 ```
 
 ---
 
-8. Attributes and Properties
+#### 8. Attributes and Properties
