@@ -13,12 +13,15 @@
 - The DOM represents the HTML document as a tree of nodes.
 - Example:
 
+<pre>
 ```html
 <html>
   <body>
     <p>Hello</p>
   </body>
 </html> 
+```
+</pre>
 
 ---
 
@@ -30,7 +33,6 @@ turns into:
 └── <body>
 ├── <h1>
 └── <p> -->
-
 
 - Each HTML element becomes an element node.
 - Text inside elements becomes a text node.
@@ -133,7 +135,6 @@ turns into:
 
 </pre>
 
-
 **Common Event Types:**
 
 - `click`, `dblclick`
@@ -147,15 +148,16 @@ turns into:
 **Remove Event Listener:**
 
 <pre>
-    ```function handleClick() {
+    ```js
+    function handleClick() {
   console.log("Clicked!");
 }
 btn.addEventListener("click", handleClick);
-btn.removeEventListener("click", handleClick);```
+btn.removeEventListener("click", handleClick);
+    ```
 </pre>
 
-
-***
+---
 
 7. DOM Manipulation
 
@@ -181,9 +183,6 @@ document.body.appendChild(newDiv);```
 
 - `parent.replaceChild(newElement, oldElement);`
 
-
-***
+---
 
 8. Attributes and Properties
-
-
