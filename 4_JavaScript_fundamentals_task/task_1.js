@@ -45,10 +45,10 @@ var a = 10
 var a = 20  // For 'var', Redeclaration is allowed.
 
 let b = 5
-let b = 6  // Syntax Error - For 'let', Redeclaration not allowed. 
+//let b = 6  // Syntax Error - For 'let', Redeclaration not allowed. 
 
 const c = "constant"
-const c = "new"  // Syntax Error - Redeclaration not allowed.
+//const c = "new"  // Syntax Error - Redeclaration not allowed.
 
 
 
