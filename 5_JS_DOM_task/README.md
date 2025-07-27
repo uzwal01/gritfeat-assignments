@@ -12,6 +12,8 @@
 
 - The DOM represents the HTML document as a tree of nodes.
 - Example:
+
+```html
 <html>
   <body>
     <p>Hello</p>
@@ -21,12 +23,12 @@
 
 turns into:
 
-Document
+<!-- Document
 └── <html>
 ├── <head>
 └── <body>
 ├── <h1>
-└── <p>
+└── <p> -->
 
 
 - Each HTML element becomes an element node.
