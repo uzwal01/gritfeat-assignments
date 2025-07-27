@@ -8,7 +8,7 @@
 
 ---
 
-2. DOM Tree Structure
+### 2. DOM Tree Structure
 
 - The DOM represents the HTML document as a tree of nodes.
 - Example:
@@ -82,7 +82,7 @@ Document
 
 **Get Computed Styles:**
 
-```
+```js
     let color = window.getComputedStyle(element).color;
 ```
 
@@ -168,36 +168,80 @@ Document
 ---
 
 ### 7. DOM Manipulation
-
+* DOM manipulation means changing the structure, content, or style of HTML elements using JavaScript after the page has loaded.
+* It allows dynamic interactivity like adding/removing content, updating UI, etc.
 **Changing Text or HTML:**
-
+* Example:
 ```js
     element.textContent = "New Text";
     element.innerHTML = "<strong>Bold Text</strong>";
 ```
+- `textContent`: Replaces all text inside the element. Treats content as plain text (ignores HTML).
+
+- `innerHTML`: Replaces content with HTML markup. Use it when you need to insert tags dynamically.
 
 **Create / Add Elements:**
-
-
+* Example:
 ```js
     const newDiv = document.createElement("div");
     newDiv.textContent = "Hello!";
     document.body.appendChild(newDiv);
 ```
+- `createElement(tag)`: Creates a new DOM node (not yet attached to the page).
 
+- `appendChild(element)`: Adds the element as the last child of the specified parent (e.g., body or another div).
 
 **Remove Elements:**
-
+* Example:
 ```js
     element.remove();
 ```
+- `remove()`: Deletes the element from the DOM completely.
+
+- Very useful when hiding UI elements permanently (like dismissing a message box).
 
 **Replace Elements:**
-
+* Example:
 ```js
     parent.replaceChild(newElement, oldElement);
 ```
+- Replaces an existing child node (`oldElement`) with a new node (`newElement`) under the same parent.
+
 
 ---
 
 ### 8. Attributes and Properties
+* In the DOM, attributes are the values defined in the HTML (like href, class, id), and properties are the JavaScript representations of those attributes on the DOM object.
+* For example:
+
+```html
+    <a id="link" href="https://example.com">Visit</a>
+```
+*  Here, `href` is an attribute in HTML. When accessed via JavaScript, it's treated as a property of the `element` object.
+
+**Get Attribute: `element.getAttribute("attrName")`**
+* Retrieves the value of the specified attribute exactly as written in HTML.
+```js
+    let link = document.getElementById("link");
+    console.log(link.getAttribute("href")); 
+```
+
+**Set Attribute: `element.setAttribute("attrName", "value")`**
+* Adds a new attribute or updates the value of an existing attribute.
+```js
+    link.setAttribute("href", "https://openai.com");
+```
+**Remove Attribute: `element.removeAttribute("attrName")`**
+* Removes the specified attribute from the element.
+```js
+    element.removeAttribute("disabled");
+```
+
+**Check for Attribute: `element.hasAttribute("attrName")`**
+* Checks if the element has a specific attribute.
+* Returns: `true` or `false`.
+```js
+    if (link.hasAttribute("target")) {
+        console.log("This link opens in a new tab");
+    }
+```
