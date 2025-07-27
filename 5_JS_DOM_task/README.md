@@ -13,23 +13,31 @@
 - The DOM represents the HTML document as a tree of nodes.
 - Example:
 
-
 ```html
-    <html>
-        <body>
-            <p>Hello</p>
-        </body>
-    </html> 
+<html>
+  <body>
+    <p>Hello</p>
+  </body>
+</html>
 ```
 
 turns into:
+
 ```html
-Document
-└── <html>
-        ├── <head>
-        └── <body>
-                ├── <h1>
-                └── <p>
+Document └──
+<html>
+  ├──
+  <head>
+    └──
+    <body>
+      ├──
+      <h1>
+        └──
+        <p></p>
+      </h1>
+    </body>
+  </head>
+</html>
 ```
 
 - Each HTML element becomes an element node.
@@ -54,14 +62,15 @@ Document
 | `querySelector(selector)`       | Returns the **first element** that matches a **CSS selector** (e.g., `#id`, `.class`, `div > p`). |
 | `querySelectorAll(selector)`    | Returns a **static NodeList** of **all** elements that match the CSS selector.                    |
 
-
 - Example:
 
-```js 
-    const title = document.getElementById("mainTitle");
-    const buttons = document.querySelectorAll(".btn");
+```js
+const title = document.getElementById("mainTitle");
+const buttons = document.querySelectorAll(".btn");
 ```
+* `getElementById()` is ideal when you're targeting a single, unique element.
 
+* `querySelectorAll()` is more powerful and flexible — supports full CSS selectors and returns multiple matches.
 ---
 
 ### 4. DOM CSS
@@ -71,26 +80,26 @@ Document
 **Inline Style Manipulation:**
 
 ```js
-    element.style.color = "red";
-    element.style.backgroundColor = "yellow";
+element.style.color = "red";
+element.style.backgroundColor = "yellow";
 ```
 
 **Add/Remove CSS Classes:**
 
 ```js
-    element.classList.add("active");                // Adds a class without removing existing ones.
-    element.classList.remove("hidden");             // Removes a specific class.
-    element.classList.toggle("highlight");          // Adds the class if it's missing, or removes it if it's present.
+element.classList.add("active");                  // Adds a class without removing existing ones.
+element.classList.remove("hidden");               // Removes a specific class.
+element.classList.toggle("highlight");            // Adds the class if it's missing, or removes it if it's present.
 ```
 
 **Get Computed Styles:**
 
-* Retrieves the final computed CSS value of an element — including styles from external stylesheets and inherited styles.
+- Retrieves the final computed CSS value of an element — including styles from external stylesheets and inherited styles.
 
-* Useful when you want to read actual styles applied to an element, not just inline ones.
+- Useful when you want to read actual styles applied to an element, not just inline ones.
 
 ```js
-    let color = window.getComputedStyle(element).color;
+let color = window.getComputedStyle(element).color;
 ```
 
 ---
@@ -102,17 +111,16 @@ Document
 **Access Form Fields:**
 
 ```html
-    <form id="myForm">
-        <input type="text" name="username" />
-        <input type="submit" />
-    </form>
+<form id="myForm">
+  <input type="text" name="username" />
+  <input type="submit" />
+</form>
 ```
 
-
-```js
+````js
     const form = document.getElementById("myForm");
     console.log(form.elements["username"].value);```
-```
+````
 
 **Other Form-Related Properties:**
 
@@ -123,26 +131,28 @@ Document
 - `form.method` – The HTTP method used for submission, either `"GET"` or `"POST"`.
 
 These properties allow you to inspect or change form behavior dynamically:
+
 ```js
-    form.action = "https://api.example.com/submit";
-    form.method = "POST";
+form.action = "https://api.example.com/submit";
+form.method = "POST";
 ```
 
 **Validating Forms:**
 
 ```js
-    form.addEventListener("submit", function(e) {
-        if (form.elements["username"].value === "") {
-            alert("Username is required!");
-            e.preventDefault(); // Stop form submission
-        }
-    });
+form.addEventListener("submit", function (e) {
+  if (form.elements["username"].value === "") {
+    alert("Username is required!");
+    e.preventDefault(); // Stop form submission
+  }
+});
 ```
-* Attach a `submit` event listener to validate input before sending the form.
 
-* `e.preventDefault()` stops the form from submitting if validation fails.
+- Attach a `submit` event listener to validate input before sending the form.
 
-* This is useful for client-side form validation, ensuring better UX before server processing.
+- `e.preventDefault()` stops the form from submitting if validation fails.
+
+- This is useful for client-side form validation, ensuring better UX before server processing.
 
 ---
 
@@ -152,15 +162,15 @@ These properties allow you to inspect or change form behavior dynamically:
 - Events let JavaScript respond to user actions and make web pages interactive.
 - Example:- `click`, `hover`, `input`, `submit`, etc.
 
-
 **Add Event Listener: `addEventListener(event, handler)`**
 
-* Registers a callback function that runs when the specified event occurs.
-* Example:
+- Registers a callback function that runs when the specified event occurs.
+- Example:
+
 ```js
-    element.addEventListener("click", function() {
-        alert("Clicked!");
-    });
+element.addEventListener("click", function () {
+  alert("Clicked!");
+});
 ```
 
 **Common Event Types:**
@@ -177,98 +187,119 @@ These properties allow you to inspect or change form behavior dynamically:
 
 - `focus`, `blur`: When an element gains or loses focus
 
-
 **Remove Event Listener: `removeEventListener(event, handler)`**
 
-* Detaches a previously attached event listener, using the same function reference.
+- Detaches a previously attached event listener, using the same function reference.
 
 ```js
-    function handleClick() {
-        console.log("Clicked!");
-    }
-    btn.addEventListener("click", handleClick);
-    btn.removeEventListener("click", handleClick);
+function handleClick() {
+  console.log("Clicked!");
+}
+btn.addEventListener("click", handleClick);
+btn.removeEventListener("click", handleClick);
 ```
-
 
 ---
 
 ### 7. DOM Manipulation
-* DOM manipulation means changing the structure, content, or style of HTML elements using JavaScript after the page has loaded.
-* It allows dynamic interactivity like adding/removing content, updating UI, etc.
+
+- DOM manipulation means changing the structure, content, or style of HTML elements using JavaScript after the page has loaded.
+- It allows dynamic interactivity like adding/removing content, updating UI, etc.
 
 **Changing Text or HTML:**
-* Example:
+
+- Example:
+
 ```js
-    element.textContent = "New Text";
-    element.innerHTML = "<strong>Bold Text</strong>";
+element.textContent = "New Text";
+element.innerHTML = "<strong>Bold Text</strong>";
 ```
+
 - `textContent`: Replaces all text inside the element. Treats content as plain text (ignores HTML).
 
 - `innerHTML`: Replaces content with HTML markup. Use it when you need to insert tags dynamically.
 
 **Create / Add Elements:**
-* Example:
+
+- Example:
+
 ```js
-    const newDiv = document.createElement("div");
-    newDiv.textContent = "Hello!";
-    document.body.appendChild(newDiv);
+const newDiv = document.createElement("div");
+newDiv.textContent = "Hello!";
+document.body.appendChild(newDiv);
 ```
+
 - `createElement(tag)`: Creates a new DOM node (not yet attached to the page).
 
 - `appendChild(element)`: Adds the element as the last child of the specified parent (e.g., body or another div).
 
 **Remove Elements:**
-* Example:
+
+- Example:
+
 ```js
-    element.remove();
+element.remove();
 ```
+
 - `remove()`: Deletes the element from the DOM completely.
 
 - Very useful when hiding UI elements permanently (like dismissing a message box).
 
 **Replace Elements:**
-* Example:
-```js
-    parent.replaceChild(newElement, oldElement);
-```
-- Replaces an existing child node (`oldElement`) with a new node (`newElement`) under the same parent.
 
+- Example:
+
+```js
+parent.replaceChild(newElement, oldElement);
+```
+
+- Replaces an existing child node (`oldElement`) with a new node (`newElement`) under the same parent.
 
 ---
 
 ### 8. Attributes and Properties
-* In the DOM, attributes are the values defined in the HTML (like href, class, id), and properties are the JavaScript representations of those attributes on the DOM object.
-* For example:
+
+- In the DOM, attributes are the values defined in the HTML (like href, class, id), and properties are the JavaScript representations of those attributes on the DOM object.
+- For example:
 
 ```html
-    <a id="link" href="https://example.com">Visit</a>
+<a id="link" href="https://example.com">Visit</a>
 ```
-*  Here, `href` is an attribute in HTML. When accessed via JavaScript, it's treated as a property of the `element` object.
+
+- Here, `href` is an attribute in HTML. When accessed via JavaScript, it's treated as a property of the `element` object.
 
 **Get Attribute: `element.getAttribute("attrName")`**
-* Retrieves the value of the specified attribute exactly as written in HTML.
+
+- Retrieves the value of the specified attribute exactly as written in HTML.
+
 ```js
-    let link = document.getElementById("link");
-    console.log(link.getAttribute("href")); 
+let link = document.getElementById("link");
+console.log(link.getAttribute("href"));
 ```
 
 **Set Attribute: `element.setAttribute("attrName", "value")`**
-* Adds a new attribute or updates the value of an existing attribute.
+
+- Adds a new attribute or updates the value of an existing attribute.
+
 ```js
-    link.setAttribute("href", "https://openai.com");
+link.setAttribute("href", "https://facebook.com");
 ```
+
 **Remove Attribute: `element.removeAttribute("attrName")`**
-* Removes the specified attribute from the element.
+
+- Removes the specified attribute from the element.
+
 ```js
-    element.removeAttribute("disabled");
+element.removeAttribute("disabled");
 ```
 
 **Check for Attribute: `element.hasAttribute("attrName")`**
-* Checks if the element has a specific attribute.
-* Returns: `true` or `false`.
+
+- Checks if the element has a specific attribute.
+- Returns: `true` or `false`.
+
 ```js
-    if (link.hasAttribute("target")) {
-        console.log("This link opens in a new tab");
-    }
+if (link.hasAttribute("target")) {
+  console.log("This link opens in a new tab");
+}
 ```
