@@ -13,13 +13,13 @@
 - The DOM represents the HTML document as a tree of nodes.
 - Example:
 
-```html
+...
 <html>
   <body>
     <p>Hello</p>
   </body>
-</html>
-
+</html> 
+...
 
 turns into:
 
