@@ -147,15 +147,15 @@ turns into:
 
 **Remove Event Listener:**
 
-<pre>
-    ```js
+
+```js
     function handleClick() {
-  console.log("Clicked!");
-}
-btn.addEventListener("click", handleClick);
-btn.removeEventListener("click", handleClick);
-    ```
-</pre>
+        console.log("Clicked!");
+    }
+    btn.addEventListener("click", handleClick);
+    btn.removeEventListener("click", handleClick);
+```
+
 
 ---
 
