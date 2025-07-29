@@ -122,9 +122,9 @@ console.log(animal);
 ```
 
 **_OUTPUT:_**
-`Dog
-Cat
-`
+`Dog`
+`Cat`
+
 **_REASON:_** `animal` inside `showAnimal` is a separate local variable due to block scoping via `let`.
 
 ---
@@ -142,7 +142,6 @@ function test() {
 test();
 ```
 **_OUTPUT:_**
-`Undefined
-2
-`
+`Undefined`
+`2`
 
