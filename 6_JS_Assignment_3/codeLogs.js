@@ -59,14 +59,108 @@
 // // Output: Dog Cat
 
 
-// What will this code output? Why?
+// // What will this code output? Why?
 
-function test() {
-  console.log(a);
-  console.log(foo());
-  var a = 1;
-  function foo() {
-    return 2;
-  }
+// function test() {
+//   console.log(a);
+//   console.log(foo());
+//   var a = 1;
+//   function foo() {
+//     return 2;
+//   }
+// }
+// test();
+// // Output: undefined 2 
+
+
+// // Explain the output of this for loop.
+
+// for (var i = 0; i < 5; i++) {
+//   setTimeout(function() {
+//     console.log(i);
+//   }, 10);
+// }
+// // Output: 5 5 5 5 5 
+
+
+// // What will the following code log to the console on the last two lines? Explain why the count variable is not reset.
+
+// function createCounter() {
+//   let count = 0;
+//   return function() {
+//     count++;
+//     console.log(count);
+//   };
+// }
+// const counter = createCounter();
+// counter();
+// counter();
+
+// // Output: 1 2
+
+// // What does this code log? Explain!
+
+// const myObject = {
+//   id: 'my-object',
+//   createLogger: function() {
+//     return () => {
+//       console.log(`Logger for ${this.id}`);
+//     };
+//   }
+// };
+// const logger = myObject.createLogger();
+// logger();
+
+// // output; Logger for my-object
+
+
+// // Write a function makeAdder(x) that takes a number x and returns a new function. The new function should take a number y and return the sum x + y. Use a closure to achieve this.
+// function makeAdder(x) {
+//     return function(y) {
+//         return x + y;
+//     };
+// }
+
+// let add = makeAdder(5);
+// console.log(add(2));
+
+// // Output: 7
+
+
+// // Implement a parent Animal and a child Dog relationship in two different ways:
+// // Using the Constructor/Prototype pattern.
+
+// // Parent
+// function Animal() {}
+// Animal.prototype.eat = function() {
+//   console.log("Animal eats");
+// };
+
+// // Child
+// function Dog() {}
+// Dog.prototype = Object.create(Animal.prototype);
+// Dog.prototype.constructor = Dog;
+// Dog.prototype.bark = function() {
+//   console.log("Dog barks");
+// };
+
+// let d = new Dog();
+// d.eat(); 
+// d.bark(); 
+
+// Using the ES6 class syntax.
+class Animal {
+    eat() {
+        console.log("Animal eats.");
+    }
 }
-test();
+
+class Dog extends Animal {
+    bark() {
+        console.log("Dog barks.");
+    }
+}
+
+const dog = new Dog();
+dog.eat();
+dog.bark();
