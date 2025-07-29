@@ -1,4 +1,4 @@
-### What will this code log? Explain your reasoning.
+### What will this code log? Explain your REASONing.
 
 ```js
 const person = {
@@ -10,9 +10,9 @@ const person = {
 person.sayHi();
 ```
 
-**_OUTPUT:_** Hi, my name is Alice.
+**_OUTPUT:_** `Hi, my name is Alice.`
 
-**_Reason:_** This method is invoked using `person.sayHi()`, so `this` refers to the `person` object where `this,name` becomes `Alice`.
+**_REASON:_** This method is invoked using `person.sayHi()`, so `this` refers to the `person` object where `this,name` becomes `Alice`.
 
 ---
 
@@ -29,9 +29,9 @@ const greetFunction = person.greet;
 greetFunction();
 ```
 
-**_OUTPUT:_** Hello, undefined
+**_OUTPUT:_** `Hello, undefined`
 
-**_Reason:_**
+**_REASON:_**
 
 - Logs undefined because `this` depends on how the function is called, not where it was defined.
 - In `person.greet();`, `this` points to person, so `this.name` is `ALice`.
@@ -42,7 +42,7 @@ const greetFunction = person.greet;
 greetFunction();
 ```
 
-Now you're calling greetFunction() on its own — not through person.
+Now we're calling greetFunction() on its own — not through person.
 So JavaScript doesn’t know what this should point to.
 
 - In strict mode, this becomes undefined.
@@ -75,9 +75,9 @@ const user = {
 user.logName();
 ```
 
-**_OUTPUT:_** Bob
+**_OUTPUT:_** `Bob`
 
-**_Reason:_**
+**_REASON:_**
 
 - Regular functions (like `function() {}`) get their own this, based on how they're called. But Arrow functions don’t get their own `this`. They inherit `this` from the place they were defined.
 - Here, the arrow function is defined inside `logName()`. `logName()` was called as `user.logName()`. So `this` inside `logName()` points to `user`. And since the arrow function inherits `this`, it also points to `user`. Therefore, Result: `this.name` is `"Bob"`.
@@ -104,7 +104,7 @@ document
   .addEventListener("click", User.welcome.bind(User));
 ```
 
-**_Reason:_**
+**_REASON:_**
 We use `bind(User)` to ensure `this` remains bound to `User`. Otherwise, `this` would be the button element.
 
 ---
@@ -120,3 +120,29 @@ function showAnimal() {
 showAnimal();
 console.log(animal);
 ```
+
+**_OUTPUT:_**
+`Dog
+Cat
+`
+**_REASON:_** `animal` inside `showAnimal` is a separate local variable due to block scoping via `let`.
+
+---
+
+### What will this code output? Why?
+```js
+function test() {
+  console.log(a);
+  console.log(foo());
+  var a = 1;
+  function foo() {
+    return 2;
+  }
+}
+test();
+```
+**_OUTPUT:_**
+`Undefined
+2
+`
+

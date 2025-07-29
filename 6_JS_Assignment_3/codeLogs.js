@@ -45,3 +45,28 @@
 // }
 // // Hint: DOM APIs can be used
 // document.getElementById("loginBtn").addEventListener("click", User.welcome.bind(User));
+
+
+// // What will be logged to the console? Explain!
+
+// let animal = 'Cat';
+// function showAnimal() {
+//   let animal = 'Dog';
+//   console.log(animal);
+// }
+// showAnimal();
+// console.log(animal);
+// // Output: Dog Cat
+
+
+// What will this code output? Why?
+
+function test() {
+  console.log(a);
+  console.log(foo());
+  var a = 1;
+  function foo() {
+    return 2;
+  }
+}
+test();
