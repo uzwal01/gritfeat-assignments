@@ -56,7 +56,7 @@ That’s why we get undefined.
 
 ```js
 const greetFunction = person.greet.bind(person);
-greetFunction(); // ✅ "Hello, Alice"
+greetFunction(); // Hello, Alice
 ```
 
 ---
@@ -292,13 +292,13 @@ dog.bark();
 **_Screenshots:_**
 
 - Main page
-![Home](screenshots/home.png)
+![Home](./Twiter-like%20UI/screenshots/home.png)
 
 - Comment Section
-![comment](screenshots/comment.png)
+![comment](./Twiter-like%20UI/screenshots/comment.png)
 
 - Profile Section 
-![profile](screenshots/profile.png)
+![profile](./Twiter-like%20UI/screenshots/profile.png)
 
 
 
@@ -308,7 +308,7 @@ dog.bark();
 
 **_Screenshots:_**
 - increment:
-![increment](screenshots/increment.png)
+![increment](./counterApp/screenshots/increment.png)
 
 - decrement:
-![alt text](screenshots/decrement.png)
+![alt text](./counterApp/screenshots/decrement.png)
