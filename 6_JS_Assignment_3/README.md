@@ -1,4 +1,4 @@
-### What will this code log? Explain your REASONing.
+### 1. What will this code log? Explain your REASONing.
 
 ```js
 const person = {
@@ -16,7 +16,7 @@ person.sayHi();
 
 ---
 
-### What is logged to the console, and why? How would you fix it so it logs "Alice"?
+### 2. What is logged to the console, and why? How would you fix it so it logs "Alice"?
 
 ```js
 const person = {
@@ -61,7 +61,7 @@ greetFunction(); // Hello, Alice
 
 ---
 
-### What will this code log and why?
+### 3. What will this code log and why?
 
 ```js
 const user = {
@@ -84,7 +84,7 @@ user.logName();
 
 ---
 
-### You have a User object with a method that logs a welcome message. There's also a "Login" button in your HTML. You want the welcome method to be called when the button is clicked, and the message should use the User object's data.
+### 4. You have a User object with a method that logs a welcome message. There's also a "Login" button in your HTML. You want the welcome method to be called when the button is clicked, and the message should use the User object's data.
 
 ```js
 const User = {
@@ -109,7 +109,7 @@ We use `bind(User)` to ensure `this` remains bound to `User`. Otherwise, `this` 
 
 ---
 
-### What will be logged to the console? Explain!
+### 5. What will be logged to the console? Explain!
 
 ```js
 let animal = "Cat";
@@ -129,7 +129,7 @@ console.log(animal);
 
 ---
 
-### What will this code output? Why?
+### 6. What will this code output? Why?
 ```js
 function test() {
   console.log(a);
@@ -153,7 +153,7 @@ test();
 
 ---
 
-### Explain the output of this for loop.
+### 7. Explain the output of this for loop.
 ```js
 for (var i = 0; i < 5; i++) {
   setTimeout(function() {
@@ -168,7 +168,7 @@ for (var i = 0; i < 5; i++) {
 
 ---
 
-### What will the following code log to the console on the last two lines? Explain why the count variable is not reset.
+### 8. What will the following code log to the console on the last two lines? Explain why the count variable is not reset.
 ```js
 function createCounter() {
   let count = 0;
@@ -191,7 +191,7 @@ counter();
 
 ---
 
-### What does this code log? Explain!
+### 9. What does this code log? Explain!
 ```js
 const myObject = {
   id: 'my-object',
@@ -214,7 +214,7 @@ logger();
 
 ---
 
-### Write a function makeAdder(x) that takes a number x and returns a new function. The new function should take a number y and return the sum x + y. Use a closure to achieve this.
+### 10. Write a function makeAdder(x) that takes a number x and returns a new function. The new function should take a number y and return the sum x + y. Use a closure to achieve this.
 
 **_CODE:_**
 ```js
@@ -233,7 +233,7 @@ console.log(add(2));
 
 ---
 
-### Implement a parent Animal and a child Dog relationship in two different ways:
+### 11. Implement a parent Animal and a child Dog relationship in two different ways:
 
 - **_Using the Constructor/Prototype pattern:_**
 ```js
@@ -287,7 +287,7 @@ dog.bark();
 
 ---
 
-### Design a content feed/post UI (similar to X/Twitter) involving Post, Comment, and User details.[Using either fetch API or axios and DOM APIs]
+### 12. Design a content feed/post UI (similar to X/Twitter) involving Post, Comment, and User details.[Using either fetch API or axios and DOM APIs]
 
 **_Screenshots:_**
 
@@ -304,7 +304,7 @@ dog.bark();
 
 
 
-### Let there be two files in the same folder: index.html and index.js. Update code in index.js so that the counter app works perfectly.
+### 13. Let there be two files in the same folder: index.html and index.js. Update code in index.js so that the counter app works perfectly.
 
 **_Screenshots:_**
 - increment:
