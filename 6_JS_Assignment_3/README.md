@@ -1,3 +1,6 @@
+## JS Assignment - 3
+All the answers including outputs and reasoning are explained below.
+
 ### 1. What will this code log? Explain your REASONing.
 
 ```js
