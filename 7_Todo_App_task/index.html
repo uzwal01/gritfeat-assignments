@@ -11,15 +11,16 @@
 <body>
     <div class="app">
         <h1>Todo App</h1>
+        <p>Organize your day with Style!</p>
         <div class="add-section">
             <input type="text" id="todo-input" placeholder="Add a new activity..." />
-            <button id="add-btn">Add</button>
+            <button class="btn-primary" id="add-btn">Add</button>
         </div>
         <div class="filter-search">
             <div class="filters">
-                <button data-filter="all" class="active">All</button>
-                <button data-filter="pending">Pending</button>
-                <button data-filter="completed">Completed</button>
+                <button data-filter="all" class="active btn-bar">All</button>
+                <button data-filter="pending" class="btn-bar">Pending</button>
+                <button data-filter="completed" class="btn-bar">Completed</button>
             </div>
 
             <input type="text" id="search-input" placeholder="Search todos..." />
@@ -29,7 +30,7 @@
             <ul id="todo-list"></ul>
         </div>
 
-        <button id="delete-all-btn">Delete All</button>
+        <button class="btn-danger" id="delete-all-btn">Delete All</button>
     </div>
 
 

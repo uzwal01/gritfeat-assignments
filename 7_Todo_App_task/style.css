@@ -1,58 +1,100 @@
 body {
-    font-family: arial, sans-serif;
-    background: #f0f4ff;
-    display: flex;
-    justify-content: center;
-    padding: 40px;
+  font-family: arial, sans-serif;
+  background: #f0f4ff;
+  display: flex;
+  justify-content: center;
+  padding: 40px;
 }
 
 .app {
-    background: #fff;
-    padding: 20px;
-    border-radius: 12px;
-    width: 600px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 600px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.app h1 {
+    color: #6c63ff;
+    text-align: center;
+    margin-bottom: 5px;
+}
+.app p {
+    color: gray;
+    text-align: center;
 }
 
 input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
 }
 
 .add-section {
-    display: flex;
-    gap: 8px;
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
 }
 
 .filter-search {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
 }
 
 .filters {
-    display: flex;
-    gap: 4px;
+  display: flex;
+  gap: 4px;
 }
 
 #search-input {
-    width: 50%;
+  width: 50%;
 }
 
-button {
-    padding: 10px;
-    border: none;
-    background-color: #6c63ff;
-    color: white;
-    border-radius: 6px;
-    cursor: pointer;
+button.btn-primary {
+  padding: 10px;
+  border: 1px solid #6c63ff;
+  background-color: #6c63ff;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
-button:hover {
-  background-color: #574ed3;
+button.btn-primary:hover {
+  background-color: transparent;
+  border: 1px solid #6c63ff;
+  color: #6c63ff;
+}
+
+button.btn-danger {
+  background-color: transparent;
+  border: 2px solid #dc2626;
+  color: #dc2626;
+  border-radius: 6px;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+button.btn-danger:hover {
+  background-color: #db4343;
+  color: #fff;
+}
+
+.filters button {
+  padding: 10px;
+  border: 2px solid #6c63ff;
+  color: #6c63ff;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.filters button:hover {
+  background-color: #6c63ff;
+  color: #fff;
 }
 
 ul {
@@ -62,15 +104,46 @@ ul {
 }
 
 .todo-item {
-    display: flex;
-    justify-content: space-between;
-    background-color: #e7f0ff;
-    padding: 10px;
-    border-radius: 6px;
-    margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e7f0ff;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
 }
 
+.todo-item button {
+  padding: 6px 10px;
+  border: 1px solid #6c63ff;
+  color: #6c63ff;
+  background-color: transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.todo-item button:hover {
+  background-color: #6c63ff;
+  color: #fff;
+}
+
+.todo-item .del-btn {
+  background-color: transparent;
+  border: 1px solid #dc2626;
+  color: #dc2626;
+  transition: 0.2s;
+}
+.todo-item .del-btn:hover {
+  background-color: #db4343;
+  color: #fff;
+}
 .todo-item.completed span {
-    text-decoration: line-through;
-    opacity: 0.6;
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.filters .active {
+  background-color: #4f46e5; /* darker purple for active */
+  color: #fff;
 }

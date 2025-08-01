@@ -29,28 +29,53 @@ addBtn.addEventListener("click", () => {
 
 // Render Todos READ
 function render() {
-  const filtered = getFilteredTodos();
   const searchText = searchInput.value.toLowerCase();
-
-  const visibleTodos = filtered.filter((todo) =>
-    todo.text.toLowerCase().includes(searchText)
-  );
-
+  const filtered = getFilteredTodos().filter((todo) => {
+    return todo.text.toLowerCase().includes(searchText)
+  })
+  
   list.innerHTML = "";
 
-  visibleTodos.forEach((todo) => {
+  filtered.forEach((todo) => {
     const li = document.createElement("li");
     li.className = `todo-item ${todo.completed ? "completed" : ""}`;
 
-    li.innerHTML = `
-            <span>${todo.text}</span>
-            <div>
-                <button onClick="toggleTodo(${todo.id})">✅</button>
-                <button onClick="editTodo(${todo.id})">✏️</button>
-                <button onClick="deleteTodo(${todo.id})">🗑️</button>
-            </div>
-        `;
+    // Create checkbox for toggling
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.checked = todo.completed;
+    checkbox.addEventListener("change", () => toggleTodo(todo.id));
+    checkbox.style.scale = "1.2";
 
+    //text
+    const span = document.createElement("span");
+    span.textContent = todo.text;
+
+    //Edit btn
+    const editBtn = document.createElement("button");
+    editBtn.textContent = "Edit";
+    editBtn.addEventListener("click", () => editTodo(todo.id));
+
+    //Delete btn
+    const delBtn = document.createElement("button");
+    delBtn.textContent = "Delete";
+    delBtn.classList = "del-btn";
+    delBtn.addEventListener("click", () => deleteTodo(todo.id));
+
+    // Edit + Delete btn Container
+    const btnContainer = document.createElement("div");
+    btnContainer.append(editBtn, delBtn);
+    btnContainer.style.display = "flex";
+    btnContainer.style.gap = "6px";
+
+    // checkbox + text in left div
+    const leftSide = document.createElement("div");
+    leftSide.style.display = "flex";
+    leftSide.style.alignItems = "center";
+    leftSide.style.gap = "10px";
+    leftSide.append(checkbox, span);
+
+    li.append(leftSide, btnContainer);
     list.appendChild(li);
   });
 }
@@ -66,8 +91,11 @@ function toggleTodo(id) {
 
 // Edit a todo UPDATE
 function editTodo(id) {
-  const newText = prompt("Edit your task");
-  if (newText) {
+  const newText = prompt("Edit your task:");
+  if (!newText) {
+    return;
+  }
+  else {
     todos = todos.map((todo) =>
       todo.id === id ? { ...todo, text: newText } : todo
     );
