@@ -1,0 +1,11 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 1rem;
+}
+
+.post {
+    background: #f9f9f9;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+}

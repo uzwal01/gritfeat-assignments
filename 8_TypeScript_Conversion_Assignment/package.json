@@ -1,0 +1,16 @@
+{
+  "name": "8_typescript_conversion_assignment",
+  "version": "1.0.0",
+  "description": "```ts\r const person: { name: string; sayHi: () => void } = {\r   name: \"Alice\",\r   sayHi: function (): void {\r     console.log(`Hi, my name is ${this.name}.`);\r   },\r };\r person.sayHi(); // Logs: Hi, my name is Alice.\r ```",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "typescript": "^5.9.2"
+  }
+}
