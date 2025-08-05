@@ -14,7 +14,7 @@ function print() {
 
 - Executes a single statement regardless of input.
 - No loops, recursion, or input dependency.
-- Time Complexity: `O(1)`
+- ****time complexity:**** `O(1)`
 
 <br>
 
@@ -30,7 +30,7 @@ function sumArray(arr) {
 
 - One loop over `arr.length = n`.
 - Performs constant work for each element --> `n` iterations.
-- Time Complexity: `O(n)`
+- **time complexity:** `O(n)`
 
 <br>
 
@@ -51,7 +51,7 @@ function findX(arr) {
 - Two nested loops → both run `n` times.
 - Work inside (push + comparison) is O(1).
 - So, total operations = `n * n` --> quadratic.
-- Time Complexity: `O(n²)`
+- **time complexity:** `O(n²)`
 
 <br>
 
@@ -68,7 +68,7 @@ function getFirstTwoElements(arr) {
 
 - No loop.
 - Accessing first two elements is constant time.
-- Time Complexity: `O(1)`
+- **time complexity:** `O(1)`
 
 <br>
 
@@ -90,7 +90,7 @@ function processTwoArrays(arr1, arr2) {
   - First loop runs `m` times → `arr1.length = m`
   - Second loop runs `n` times → `arr2.length = n`
 - They’re not nested --> just additive.
-- Time Complexity: `O(m + n)`
+- **time complexity:** `O(m + n)`
 
 <br>
 
@@ -107,7 +107,7 @@ function countF(n) {
 - Loop variable i doubles each time → grows exponentially: `1, 2, 4, 8, ..., < n`
 - Total iterations = number of times you can multiply `i` by 2 before exceeding `n`
 - That’s approximately log₂(n)
-- Time Complexity: `O(log n)`
+- **time complexity:** `O(log n)`
 
 <br>
 
@@ -131,7 +131,7 @@ function findElement(sortedArr, target) {
 - Linear search over a sorted array.
 - Compares each element to `target`.
 
-* Time Complexities:
+* **time complexities:**
   | Case | Complexity | Why? |
   | ----------- | ---------- | ---------------------------------------------------------- |
   | **Best** | **O(1)** | If `target === arr[0]` -> found on first check. |
@@ -152,7 +152,7 @@ function recursiveSum(n) {
 - Recursively sums numbers from `n` to `0`.
 - One recursive call per decrement.
 
-* Time Complexities:
+* **time complexities:**
 
   | Case        | Complexity | Why?                                     |
   | ----------- | ---------- | ---------------------------------------- |
@@ -180,7 +180,7 @@ function dFunction(arr) {
 - Checks for duplicates in array.
 - Uses a hash map for O(1) lookup/insert.
 
-* Time Complexities:
+* **time complexities:**
 
   | Case        | Complexity | Why?                                                      |
   | ----------- | ---------- | --------------------------------------------------------- |
@@ -205,7 +205,7 @@ function repeatLog(arr) {
 
 - For each element in `arr`, logs `'hello'` as many times as the element's value.
 
-* Time Complexities:
+* **time complexities:**
 
   | Case        | Complexity   | Why?                                                |
   | ----------- | ------------ | --------------------------------------------------- |
