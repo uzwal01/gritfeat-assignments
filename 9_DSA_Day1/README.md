@@ -153,8 +153,62 @@ function recursiveSum(n) {
 - One recursive call per decrement.
 
 * Time Complexities:
-| Case        | Complexity | Why?                                     |
-| ----------- | ---------- | ---------------------------------------- |
-| **Best**    | **O(1)**   | If `n <= 0`, hits base case immediately. |
-| **Average** | **O(n)**   | For general `n`, recurses `n` times.     |
-| **Worst**   | **O(n)**   | No early termination. Tail depth is `n`. |
+
+  | Case        | Complexity | Why?                                     |
+  | ----------- | ---------- | ---------------------------------------- |
+  | **Best**    | **O(1)**   | If `n <= 0`, hits base case immediately. |
+  | **Average** | **O(n)**   | For general `n`, recurses `n` times.     |
+  | **Worst**   | **O(n)**   | No early termination. Tail depth is `n`. |
+
+<br>
+
+```js
+function dFunction(arr) {
+  const seen = {};
+  for (let i = 0; i < arr.length; i++) {
+    if (seen[arr[i]]) {
+      return true;
+    }
+    seen[arr[i]] = true;
+  }
+  return false;
+}
+```
+
+**What It Does:**
+
+- Checks for duplicates in array.
+- Uses a hash map for O(1) lookup/insert.
+
+* Time Complexities:
+
+  | Case        | Complexity | Why?                                                      |
+  | ----------- | ---------- | --------------------------------------------------------- |
+  | **Best**    | **O(1)**   | Duplicate found at index 1 (e.g., `[2, 2, ...]`)          |
+  | **Average** | **O(n)**   | Needs to scan part of the array before duplicate appears. |
+  | **Worst**   | **O(n)**   | No duplicates at all → must check all elements.           |
+
+  <br>
+
+```js
+function repeatLog(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    let repetitions = arr[i];
+    for (let j = 0; j < repetitions; j++) {
+      console.log("hello");
+    }
+  }
+}
+```
+
+**What It Does:**
+
+- For each element in `arr`, logs `'hello'` as many times as the element's value.
+
+* Time Complexities:
+
+  | Case        | Complexity   | Why?                                                |
+  | ----------- | ------------ | --------------------------------------------------- |
+  | **Best**    | **O(n)**     | If all `arr[i] = 0`, inner loop never runs.         |
+  | **Average** | **O(n + k)** | Loop runs `n` times, inner runs `k` times.          |
+  | **Worst**   | **O(n + k)** | All `arr[i] = large number` → inner loop dominates. |
