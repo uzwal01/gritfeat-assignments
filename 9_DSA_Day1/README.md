@@ -186,7 +186,7 @@ function dFunction(arr) {
   | ----------- | ---------- | --------------------------------------------------------- |
   | **Best**    | **O(1)**   | Duplicate found at index 1 (e.g., `[2, 2, ...]`)          |
   | **Average** | **O(n)**   | Needs to scan part of the array before duplicate appears. |
-  | **Worst**   | **O(n)**   | No duplicates at all → must check all elements.           |
+  | **Worst**   | **O(n)**   | No duplicates at all -> must check all elements.           |
 
   <br>
 
@@ -211,4 +211,4 @@ function repeatLog(arr) {
   | ----------- | ------------ | --------------------------------------------------- |
   | **Best**    | **O(n)**     | If all `arr[i] = 0`, inner loop never runs.         |
   | **Average** | **O(n + k)** | Loop runs `n` times, inner runs `k` times.          |
-  | **Worst**   | **O(n + k)** | All `arr[i] = large number` → inner loop dominates. |
+  | **Worst**   | **O(n + k)** | All `arr[i] = large number` -> inner loop dominates. |
