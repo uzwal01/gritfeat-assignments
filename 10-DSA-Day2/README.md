@@ -294,7 +294,7 @@ console.log(`Index of ${target}:`, index);
 <br>
 
 
-### 10.Explain the concept of a Binary Search Tree and provide its implementation in JavaScript.
+### 10. Explain the concept of a Binary Search Tree and provide its implementation in JavaScript.
 
 A Binary Search Tree is a binary tree where:
 - Each node has at most two children: `left` and `right`.
