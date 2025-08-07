@@ -263,6 +263,7 @@ console.log(`Index of ${target}:`, index);
 - Search: Finds data from linked list.
 
 **Output:**
+
 ![SinglyLL](./screenshots/SinglyLL.png)
 
 
@@ -274,6 +275,7 @@ console.log(`Index of ${target}:`, index);
 ### 9. Function to detect whether the dependency structure contains any cycles, where an item indirectly or directly depends on itself.(optional)
 
 **Output:**
+
 ![DependencyStructure](./screenshots/DependencyStructure.png)
 
 
