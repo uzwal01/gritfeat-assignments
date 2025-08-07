@@ -270,6 +270,8 @@ console.log(`Index of ${target}:`, index);
 - isEmpty: Checks if list is empty or not
 - Search: Finds data from linked list.
 
+**Code:** `Code is in separate file.`
+
 **Output:**
 
 ![SinglyLL](./screenshots/SinglyLL.png)
@@ -281,6 +283,8 @@ console.log(`Index of ${target}:`, index);
 
 
 ### 9. Function to detect whether the dependency structure contains any cycles, where an item indirectly or directly depends on itself.(optional)
+
+**Code:** `Code is in separate file.`
 
 **Output:**
 
