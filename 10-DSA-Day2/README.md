@@ -26,7 +26,7 @@ function findDuplicates(arr) {
 }
 
 const data = [1, 3, 5, 2, 4, 5];
-console.log(findDuplicates(data));
+console.log(findDuplicates(data));    // [ 5 ]
 ```
 **Time Complexity:** `O(n)` - linear time based on the size of the input array.
 
@@ -52,7 +52,7 @@ const roles = ['admin', 'manager', 'supervisor', 'editor', 'viewer', 'owner', ''
 const userRoles = ['user', 'editor'];
 const requiredRoles = ['admin', 'editor'];
 
-console.log(hasRequiredRole(userRoles, requiredRoles)); 
+console.log(hasRequiredRole(userRoles, requiredRoles));    // true
 ```
 **Time Complexity:** `O(n + m)`
 - Building the Set: O(n), where n = `requiredRoles.length`
@@ -81,7 +81,7 @@ function commonElements(arr1, arr2) {
 const a1 =  [1,4,2,8,9];
 const a2 = [7,5,0,4,1];
 
-console.log(commonElements(a1, a2));
+console.log(commonElements(a1, a2));   // [ 1, 4 ]
 ```
 
 **Time Complexity:** `O(n + m)`
@@ -112,7 +112,7 @@ const data = [
 
 const allowedKeys = ['name', 'age'];
 
-console.log(filterByAllowedKeys(data, allowedKeys));
+console.log(filterByAllowedKeys(data, allowedKeys));    // [ { key: 'name', value: 'John' }, { key: 'age', value: 20 } ]
 ```
 
 **Time Complexity:** `O(n + k)`
@@ -189,7 +189,12 @@ const products = [
 ];
 
 console.log(groupByCategory(products));
+
 ```
+
+**Output:**
+
+![groupByCategory](./screenshots/groupByCategory.png)
 
 **Time Complexity:** `O(n)` - O(n) iterations
 
@@ -248,6 +253,9 @@ console.log("Sorted Array:", sortedArray);
 console.log(`Index of ${target}:`, index);
 ```
 
+**Output:**
+
+![binarySearchAlgorithm](./screenshots/binarySearchAlgorithm.png)
 
 <br>
 
