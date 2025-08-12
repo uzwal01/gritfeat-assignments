@@ -9,6 +9,6 @@ The Observer Pattern allows an object (subject) to notify multiple dependents (o
 - `NewsAgency` implements `Subject` and maintains a list of observers.
 - When `publishNews()` is called, all observers get updated.
 
-## Example Output
+## Output
 
 ![observer](./screenshot/observer.png)
