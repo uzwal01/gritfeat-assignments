@@ -1,69 +1,41 @@
-# React + TypeScript + Vite
+# React Drag and Drop Demo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple **drag-and-drop demo** built with **React** and **TypeScript**. This project demonstrates how to move items between two containers dynamically using React state and the HTML5 Drag and Drop API.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Demo
 
-## Expanding the ESLint configuration
+- Before dragging
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+![demo1](./public/screenshots/demo1.png)
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- After dragging
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+![demo2](./public/screenshots/demo2.png)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Try dragging items from **Container A** to **Container B** and vice versa. Items will be removed from the source and added to the target dynamically.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Features
+
+- Drag and drop items between two containers.
+- State management with **React Hooks (`useState`)**.
+- Dynamic rendering of items after drag-and-drop.
+- Fully styled using **Tailwind CSS**.
+- Easy to extend to multiple containers or items.
+
+---
+
+## Technologies
+
+- **React** (with TypeScript)
+- **Tailwind CSS**
+- **HTML5 Drag and Drop API**
+- **Vite** 
+
+---
+
+
