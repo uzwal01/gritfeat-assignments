@@ -66,6 +66,7 @@ src/
 
 
 - Searching a Product
+
 ![search](./public/screenshots/search.png)
 
 
@@ -76,7 +77,7 @@ src/
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/uzwal01/product-listing-app.git
+git clone https://github.com/uzwal01/gritfeat-assignments/tree/main/13-React-Assignment-Product-Listing-App/product-listing-app
 cd product-listing-app
 ```
 
