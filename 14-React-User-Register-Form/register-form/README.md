@@ -50,16 +50,16 @@ This project demonstrates schema-based validation, dynamic field arrays, and pro
 ## ScreenShots
 
 - Home
-![home](home.png)
+![home](./public/screenshots/home.png)
 
 - User Registration
-![one](one.png)
+![one](./public/screenshots/one.png)
 
 - Alert on successful submission
-![alert](alert.png)
+![alert](./public/screenshots/alert.png)
 
 - Inline Dynamic Error Messages
-![error](error.png)
+![error](./public/screenshots/error.png)
 
 - Registered users can be viewed in browser console
-![console](console.png)
+![console](./public/screenshots/console.png)
