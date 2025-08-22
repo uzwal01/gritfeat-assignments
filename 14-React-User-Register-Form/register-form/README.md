@@ -1,69 +1,65 @@
-# React + TypeScript + Vite
+# React User Register Form
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A user registration form built with **React**, **TypeScript**, **Vite**, **Tailwind CSS**, **React Hook Form**, and **Zod**.  
+This project demonstrates schema-based validation, dynamic field arrays, and proper form handling.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Form Management:** Powered by [React Hook Form](https://react-hook-form.com/)  
+- **Schema Validation:** Enforced using [Zod](https://zod.dev)  
+- **Dynamic Fields:** Add or remove **skills** dynamically with at least one field by default  
+- **Validation Rules:**
+  - All fields except *Message* are required
+  - Whitespace-only inputs are invalid
+  - Email format validation
+  - Contact number: must be at least 10 digits and contain only numbers
+  - At least 1 skill required
+- **Error Handling:** Inline dynamic error messages for each field  
+- **Form Reset:** On successful submission, the form resets with default values  
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Project Structure
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+├── components/
+│   └── RegisterForm.tsx      # Main form component
+├── schemas/
+│   └── registerSchema.ts     # Zod validation schema
+├── App.tsx                   # Root component
+├── main.tsx                  # React DOM entry
+├── index.css                 # Tailwind base styles
+└── ...
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Tech Stack
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- React (with Vite) — Fast development and build tool
+- Tailwind CSS — Utility-first styling
+- TypeScript — Type safety
+- React Hook Form — Lightweight form management
+- Zod — Type-safe validation schemas
+
+
+---
+
+## ScreenShots
+
+- Home
+![home](home.png)
+
+- User Registration
+![one](one.png)
+
+- Alert on successful submission
+![alert](alert.png)
+
+- Inline Dynamic Error Messages
+![error](error.png)
+
+- Registered users can be viewed in browser console
+![console](console.png)

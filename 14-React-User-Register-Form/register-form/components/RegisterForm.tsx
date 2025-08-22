@@ -18,7 +18,7 @@ export default function RegisterForm() {
 
   const { fields, append, remove } = useFieldArray({
     control,
-    name: "skills",
+    name: "skills", // TypeScript will now accept this
   });
 
   const onSubmit = (data: RegisterSchemaType) => {
@@ -35,7 +35,7 @@ export default function RegisterForm() {
       >
         {/* FirstName */}
         <div>
-          <label className="block font-medium">First Name</label>
+          <label className="block font-medium">First Name*</label>
           <input
             {...register("firstName")}
             className="w-full p-2 border rounded"
@@ -47,7 +47,7 @@ export default function RegisterForm() {
 
         {/* LastName */}
         <div>
-          <label className="block font-medium">Last Name</label>
+          <label className="block font-medium">Last Name*</label>
           <input
             {...register("lastName")}
             className="w-full p-2 border rounded"
@@ -59,7 +59,7 @@ export default function RegisterForm() {
 
         {/* Email */}
         <div>
-          <label className="block font-medium">Email</label>
+          <label className="block font-medium">Email*</label>
           <input {...register("email")} className="w-full p-2 border rounded" />
           {errors.email && (
             <p className="text-red-500 text-sm">{errors.email.message}</p>
@@ -67,7 +67,7 @@ export default function RegisterForm() {
         </div>
         {/* Contact */}
         <div>
-          <label className="block font-medium">Contact</label>
+          <label className="block font-medium">Contact Number*</label>
           <input
             {...register("contact")}
             className="w-full p-2 border rounded"
@@ -79,12 +79,12 @@ export default function RegisterForm() {
 
         {/* Role */}
         <div>
-          <label className="block font-medium">Role</label>
+          <label className="block font-medium">Role*</label>
           <select {...register("role")} className="w-full p-2 border rounded">
             <option value="">Select Role</option>
-            <option>Developer</option>
-            <option>Designer</option>
-            <option>Manager</option>
+            <option value="developer">Developer</option>
+            <option value="designer">Designer</option>
+            <option value="manager">Project Manager</option>
           </select>
           {errors.role && (
             <p className="text-red-500 text-sm">{errors.role.message}</p>
@@ -93,7 +93,7 @@ export default function RegisterForm() {
 
         {/* Skills with Dynamic Fields */}
         <div>
-          <label className="block font-medium">Skills</label>
+          <label className="block font-medium">Skills*</label>
           {fields.map((field, index) => (
             <div key={field.id} className="flex items-center space-x-2 mb-2">
               <input
