@@ -7,5 +7,4 @@ export default defineConfig({
     react(),
   tailwindcss()
 ],
-base: "/gritfeat-assignments-product-listing/",
 })
