@@ -23,6 +23,7 @@ A simple **React + TypeScript** CRUD application that demonstrates:
 ### Dashboard
 - Fetches product data from [FakeStore API](https://fakestoreapi.com/).
 - Displays products in styled cards.
+- Search Filtering.
 - **CRUD Operations:**
   - **Create**: Add a new product via a popup form (title, price, image).
   - **Read**: View all products in a paginated grid.
@@ -78,6 +79,22 @@ npm run dev
     - Add a new product (via popup form)
     - Delete products
     - Navigate through pages
+
+---
+
+## Screenshots
+
+- Login Page
+![login](login.png)
+
+- Product List Dashboard
+![dashboard](dashboard.png)
+
+- Add Product Dialog
+![add](add.png)
+
+- Update Product
+![update](update.png)
 
 
 ---
