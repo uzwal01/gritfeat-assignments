@@ -14,7 +14,7 @@ import { Label } from "../components/ui/label";
 
 async function fetchProducts(page: number) {
   const res = await fetch(
-    `https://fakestoreapi.com/products?limit=all&page=${page}`
+    `https://fakestoreapi.com/products?limit=12&page=${page}`
   );
 
   if (!res.ok) {
@@ -26,6 +26,7 @@ async function fetchProducts(page: number) {
 export default function Dashboard() {
   const queryClient = useQueryClient();
   const [page, setPage] = useState(1);
+  const [query, setQuery] = useState(""); // Query State
 
   //Fetch Data
   const { data, isLoading, isError } = useQuery({
@@ -95,17 +96,35 @@ export default function Dashboard() {
   if (isLoading) return <p>Loading...</p>;
   if (isError) return <p>Error loading products</p>;
 
+  // Filtered data based on query
+  const filteredProducts = data.filter((product: any) =>
+    product.title.toLowerCase().includes(query.toLowerCase())
+  );
+
   return (
     <div className="h-full">
-      <nav className="w-full text-black bg-zinc-50 p-5 shadow-lg">
-        <ul className="flex justify-end items-center gap-4 font-semibold">
-          <li>
-            <a href="/dashboard">Products</a>
-          </li>
-          <li>
-            <a href="/">Logout</a>
-          </li>
-        </ul>
+      <nav className="w-full text-black bg-zinc-50 p-5 shadow-lg flex gap-4 justify-center items-center">
+        {/* Search Filtering */}
+        <div>
+          <Input
+            type="text"
+            name="search"
+            className="block outline-none rounded py-1 px-2 text-white border bg-zinc-200"
+            placeholder="Search Products"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+          />
+        </div>
+        <div>
+          <ul className="flex justify-end items-center gap-4 font-semibold">
+            <li>
+              <a href="/dashboard">Products</a>
+            </li>
+            <li>
+              <a href="/">Logout</a>
+            </li>
+          </ul>
+        </div>
       </nav>
 
       {/* Product Card */}
@@ -178,35 +197,112 @@ export default function Dashboard() {
           </div>
         </div>
 
+        {/* Using filteredProducts instead of raw data */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
-          {data.map((product: any) => (
-            <Card key={product.id} className="p-4">
-              <img
-                src={product.image}
-                alt={product.title}
-                className="max-h-40 object-contain"
-              />
-              <h2 className="font-semibold line-clamp-1">{product.title}</h2>
-              <p className="font-semibold text-gray-600">
-                <span className="text-yellow-500">$ </span>
-                {product.price}
-              </p>
-              <div className="flex justify-start items-center gap-2">
-                <Button
-                  className="mt-2 w-1/4 bg-zinc-300 text-black hover:text-white"
-                  onClick={() => updateMutation.mutate(product.id)}
-                >
-                  Update
-                </Button>
-                <Button
-                  className="mt-2 w-1/4"
-                  onClick={() => deleteMutation.mutate(product.id)}
-                >
-                  Delete
-                </Button>
-              </div>
-            </Card>
-          ))}
+          {filteredProducts.length > 0 ? (
+            filteredProducts.map((product: any) => (
+              <Card key={product.id} className="p-4">
+                <img
+                  src={product.image}
+                  alt={product.title}
+                  className="max-h-40 object-contain"
+                />
+                <h2 className="font-semibold line-clamp-1">{product.title}</h2>
+                <p className="font-semibold text-gray-600">
+                  <span className="text-yellow-500">$ </span>
+                  {product.price}
+                </p>
+                <div className="flex justify-start items-center gap-2">
+                  {/* Update Product Dialog */}
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <Button className="mt-2 w-1/4 bg-zinc-300 text-black hover:text-white">
+                        Update
+                      </Button>
+                    </DialogTrigger>
+                    <DialogContent>
+                      <DialogHeader>
+                        <DialogTitle>Update Product</DialogTitle>
+                      </DialogHeader>
+                      <form
+                        onSubmit={(e) => {
+                          e.preventDefault();
+                          updateMutation.mutate({
+                            id: product.id, // pass product id
+                            updates: {
+                              title: newTitle || product.title, // fallback to current product value
+                              price: newPrice
+                                ? parseFloat(newPrice)
+                                : product.price,
+                              image: newImage || product.image,
+                            },
+                          });
+
+                          // clear form states after submit
+                          setNewTitle("");
+                          setNewPrice("");
+                          setNewImage("");
+                        }}
+                        className="flex flex-col gap-4"
+                      >
+                        <div>
+                          <Label className="mb-2">Title</Label>
+                          <Input
+                            defaultValue={product.title} 
+                            onChange={(e) => setNewTitle(e.target.value)}
+                            placeholder="Product title"
+                            required
+                          />
+                        </div>
+
+                        <div>
+                          <Label className="mb-2">Price</Label>
+                          <Input
+                            type="number"
+                            defaultValue={product.price} 
+                            onChange={(e) => setNewPrice(e.target.value)}
+                            placeholder="Product price"
+                            required
+                          />
+                        </div>
+
+                        <div>
+                          <Label className="mb-2">Image URL</Label>
+                          <Input
+                            defaultValue={product.image} 
+                            onChange={(e) => setNewImage(e.target.value)}
+                            placeholder="https://example.com/product.jpg"
+                            required
+                          />
+                        </div>
+
+                        <Button
+                          className="mt-2"
+                          type="submit"
+                          disabled={updateMutation.isPending}
+                        >
+                          {updateMutation.isPending
+                            ? "Updating..."
+                            : "Update Product"}
+                        </Button>
+                      </form>
+                    </DialogContent>
+                  </Dialog>
+
+                  <Button
+                    className="mt-2 w-1/4"
+                    onClick={() => deleteMutation.mutate(product.id)}
+                  >
+                    Delete
+                  </Button>
+                </div>
+              </Card>
+            ))
+          ) : (
+            <p className="col-span-full text-center text-gray-500">
+              No products found.
+            </p>
+          )}
         </div>
       </div>
 
