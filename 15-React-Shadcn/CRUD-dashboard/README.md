@@ -85,16 +85,16 @@ npm run dev
 ## Screenshots
 
 - Login Page
-![login](login.png)
+![login](./public/login.png)
 
 - Product List Dashboard
-![dashboard](dashboard.png)
+![dashboard](./public/dashboard.png)
 
 - Add Product Dialog
-![add](add.png)
+![add](./public/add.png)
 
 - Update Product
-![update](update.png)
+![update](./public/update.png)
 
 
 ---
