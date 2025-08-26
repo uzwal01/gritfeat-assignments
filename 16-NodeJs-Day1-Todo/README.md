@@ -1,7 +1,7 @@
-# Todo CLI - Node.js + TypeScript
+# Todo List Storage System CLI - Node.js + TypeScript
 
 A simple command-line Todo List application built with **Node.js** and **TypeScript**.  
-Tasks are stored in a JSON file, and every action is logged to a separate JSON file. Perfect for beginners learning Node.js, TypeScript, and file-based storage.
+Tasks are stored in a JSON file, and every action is logged to a separate JSON file.
 
 ---
 
@@ -33,3 +33,77 @@ Each log entry includes:
 
 ---
 
+## Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/uzwal01/gritfeat-assignments/tree/main/16-NodeJs-Day1-Todo
+```
+
+2. Install dependencie
+
+```
+npm install
+```
+
+3. Run commands using `ts-node`:
+```
+npx ts-node src/index.ts <command>
+```
+
+---
+
+## Usage
+
+#### Add a task
+```
+npx ts-node src/index.ts add "Buy groceries"
+```
+![add](./screenshots/add.png)
+
+#### List all Tasks
+```
+npx ts-node src/index.ts list
+```
+![list](./screenshots/list.png)
+
+#### Toggle task completion
+```
+npx ts-node src/index.ts toggle <TASK_ID>
+```
+![toggle](./screenshots/toggle.png)
+
+#### Update task title
+```
+npx ts-node src/index.ts update <TASK_ID> "New task title"
+```
+![update](./screenshots/update.png)
+
+#### Remove a task
+```
+npx ts-node src/index.ts remove <TASK_ID>
+```
+![remove](./screenshots/remove.png)
+
+#### Clear tasks
+```
+# Clear all tasks
+npx ts-node src/index.ts clear
+
+# Clear only completed tasks
+npx ts-node src/index.ts clear --completed
+```
+![clear](./screenshots/clear.png)
+
+#### View logs
+```
+npx ts-node src/index.ts logs
+```
+![view-logs](./screenshots/view-logs.png)
+
+#### In `todos.json` file
+![todos-json](./screenshots/todos-json.png)
+
+#### In `logs.json` file
+![logs](./screenshots/logs.png)

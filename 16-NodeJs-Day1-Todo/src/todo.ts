@@ -84,7 +84,7 @@ export function clearTasks(onlyCompleted = false) {
     }
     writeJSON(TODOS_FILE, todos);
     logAction('remove', null, `Cleared ${removedCount} ${onlyCompleted ? 'completed' : ''} task(s)`);
-    console.log(`🧹 Cleared ${removedCount} ${onlyCompleted ? 'completed' : ''} task(s)`);
+    console.log(`Cleared ${removedCount} ${onlyCompleted ? 'completed' : ''} task(s)`);
 }
 
 

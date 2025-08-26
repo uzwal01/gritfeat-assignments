@@ -19,5 +19,82 @@
     "taskId": null,
     "timestamp": "2025-08-26T14:51:24.690Z",
     "details": "Cleared 2  task(s)"
+  },
+  {
+    "id": "xafzfvgt8",
+    "action": "add",
+    "taskId": "74pg9ekdd",
+    "timestamp": "2025-08-26T14:57:33.827Z",
+    "details": "Added task: Buy groceries"
+  },
+  {
+    "id": "rujj0tpw3",
+    "action": "list",
+    "taskId": null,
+    "timestamp": "2025-08-26T14:59:14.459Z",
+    "details": "Listed 1 tasks"
+  },
+  {
+    "id": "6rm911rst",
+    "action": "toggle",
+    "taskId": "74pg9ekdd",
+    "timestamp": "2025-08-26T15:01:06.720Z",
+    "details": "Toggled to done"
+  },
+  {
+    "id": "kpw8vu2h1",
+    "action": "toggle",
+    "taskId": "74pg9ekdd",
+    "timestamp": "2025-08-26T15:02:18.649Z",
+    "details": "Toggled to todo"
+  },
+  {
+    "id": "kdj8xov4c",
+    "action": "update",
+    "taskId": "74pg9ekdd",
+    "timestamp": "2025-08-26T15:02:50.595Z",
+    "details": "Updated task title from \"Buy groceries\" to \"Buy Electricals\""
+  },
+  {
+    "id": "hj4l0lmtk",
+    "action": "remove",
+    "taskId": "74pg9ekdd",
+    "timestamp": "2025-08-26T15:19:56.119Z",
+    "details": "Removed task: Buy Electricals"
+  },
+  {
+    "id": "61gzfbmex",
+    "action": "remove",
+    "taskId": null,
+    "timestamp": "2025-08-26T15:21:14.378Z",
+    "details": "Cleared 0  task(s)"
+  },
+  {
+    "id": "vuzn2f85x",
+    "action": "add",
+    "taskId": "wxq5jqb30",
+    "timestamp": "2025-08-26T15:21:34.190Z",
+    "details": "Added task: Buy groceries"
+  },
+  {
+    "id": "n1rgsiae4",
+    "action": "remove",
+    "taskId": null,
+    "timestamp": "2025-08-26T15:21:38.640Z",
+    "details": "Cleared 1  task(s)"
+  },
+  {
+    "id": "5qdn85fpo",
+    "action": "add",
+    "taskId": "u0dbd5maf",
+    "timestamp": "2025-08-26T15:22:07.942Z",
+    "details": "Added task: Buy groceries"
+  },
+  {
+    "id": "iwwgtvmud",
+    "action": "remove",
+    "taskId": null,
+    "timestamp": "2025-08-26T15:22:13.383Z",
+    "details": "Cleared 1  task(s)"
   }
 ]
