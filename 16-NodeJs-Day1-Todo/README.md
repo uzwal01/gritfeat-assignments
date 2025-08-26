@@ -109,3 +109,21 @@ npx ts-node src/index.ts logs
 
 #### In `logs.json` file
 ![logs](./screenshots/logs.png)
+
+
+---
+
+## Project Structure
+```pgsql
+todo-cli/
+├─ data/
+│  ├─ todos.json
+│  └─ logs.json
+├─ src/
+│  ├─ types.ts        # Task and log type definitions
+│  ├─ utils.ts        # JSON read/write helpers
+│  ├─ todo.ts         # Task operations and logging
+│  └─ index.ts        # CLI entry point with switch commands
+├─ package.json
+└─ tsconfig.json
+```
