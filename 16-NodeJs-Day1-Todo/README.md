@@ -56,6 +56,8 @@ npx ts-node src/index.ts <command>
 
 ## Usage
 
+#### Usage Instruction
+![usage](./screenshots/usage.png)
 #### Add a task
 ```
 npx ts-node src/index.ts add "Buy groceries"
