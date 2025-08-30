@@ -11,35 +11,37 @@ const BlogRepository = {
         const data = {
             ...payload,
             id: this.getNextId(),
+            createdAt: new Date().toISOString(),
         };
         BLOGS.push(data);
         return data;
     },
 
-    getAll() {
+    getAll(): IBlog[] {
         return BLOGS;
     },
 
-    getById(id: number): IBlog | undefined {
-        return BLOGS.find((blog) => blog.id === id);
+    getById(id: number): IBlog {
+        const blog = BLOGS.find((blog) => blog.id === id);
+
+        if(!blog) throw new Error("Blog not found!");
+        return blog;
     },
 
-    deleteById(id: number) {
-        const blog = this.getById(id);
-        if (!blog) return undefined;
-        BLOGS = BLOGS.filter((blog) => blog.id !== id);
-        return true;
-    },
+   deleteById(id: number): void {
+    const blog = this.getById(id); 
+    BLOGS = BLOGS.filter((b) => b.id !== blog.id);
+  },
 
-    updateById(id: number, payload: Partial<IBlogPayload>) {
+    updateById(id: number, payload: Partial<IBlogPayload>):IBlog {
         const blog = this.getById(id);
-        if (!blog) return undefined;
-        const newBlog: IBlog = {
+        const updatedBlog: IBlog = {
             ...blog,
             ...payload,
+            createdAt: blog.createdAt,
         };
-        BLOGS = BLOGS.map((blog) => (blog.id == id ? newBlog : blog));
-        return newBlog;
+        BLOGS = BLOGS.map((blog) => (blog.id == id ? updatedBlog : blog));
+        return updatedBlog;
     },
 };
 

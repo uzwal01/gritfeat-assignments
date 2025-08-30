@@ -1,7 +1,8 @@
 export interface IBlog {
     id: number;
-    name: string;
-    status: string;
+    title: string;
+    content: string;
+    createdAt: string;
 }
 
 export interface IBlogPayload {

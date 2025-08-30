@@ -1,6 +1,6 @@
 import express, { Request, Response } from "express";
 import { PORT } from "./config/env";
-
+import router from "./routes"
 
 (() => {
     const app = express();
@@ -13,7 +13,11 @@ import { PORT } from "./config/env";
         });
     });
 
+    app.use("/api", router);
 
+    app.all(/.*/, function(req: Request, res: Response) {
+        res.status(404).json({ message: "Path not found" });
+    })
 
     app.listen(PORT, () => {
         console.log(`The application is running at port: ${PORT}`);
