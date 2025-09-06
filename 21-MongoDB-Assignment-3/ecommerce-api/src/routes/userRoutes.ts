@@ -1,5 +1,6 @@
 import express from "express";
 import { createUser, deleteUser, getUserById, getUsers, updateUser } from "../controllers/userController";
+import { getOrdersByCustomer } from "../controllers/orderController";
 
 const router = express.Router();
 
@@ -17,5 +18,13 @@ router.patch("/:id", updateUser);
 
 // DELETE /users/:id - Delete a user
 router.delete("/:id", deleteUser);
+
+
+
+
+// Nested route: GET /users/:userId/orders
+router.get("/:userId/orders", getOrdersByCustomer);
+
+
 
 export default router;

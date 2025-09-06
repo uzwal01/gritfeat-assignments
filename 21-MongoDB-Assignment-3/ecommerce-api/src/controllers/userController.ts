@@ -1,6 +1,5 @@
 import { Request, Response } from "express";
 import User from "../models/User";
-import { error, profile } from "console";
 
 
 // POST /users - Create a new user
