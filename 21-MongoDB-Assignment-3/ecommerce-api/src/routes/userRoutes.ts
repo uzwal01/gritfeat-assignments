@@ -1,9 +1,21 @@
 import express from "express";
-import { createUser } from "../controllers/userController";
+import { createUser, deleteUser, getUserById, getUsers, updateUser } from "../controllers/userController";
 
 const router = express.Router();
 
 // POST /users
 router.post("/", createUser);
+
+// GET /users - with filters and pagination
+router.get("/", getUsers);
+
+// Get /users/:id - Get a single user by _id
+router.get("/:id", getUserById);
+
+// PATCH /users/:id - Update user profile (not username or email)
+router.patch("/:id", updateUser);
+
+// DELETE /users/:id - Delete a user
+router.delete("/:id", deleteUser);
 
 export default router;
