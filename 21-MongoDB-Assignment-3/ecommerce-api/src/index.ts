@@ -4,7 +4,7 @@ import { connectDB } from "./config/db";
 import userRoutes from "./routes/userRoutes";
 import productRoutes from "./routes/productRoutes";
 import orderRoutes from "./routes/orderRoutes";
-
+import reportRoutes from "./routes/reportRoutes";
 
 dotenv.config();
 
@@ -33,6 +33,8 @@ app.use("/products", productRoutes)
 // /orders route
 app.use("/orders", orderRoutes);
 
+// /reports route
+app.use("/reports", reportRoutes)
 
 
 

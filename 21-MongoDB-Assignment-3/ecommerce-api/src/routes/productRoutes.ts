@@ -1,5 +1,5 @@
 import express from "express";
-import { addReviewToProduct, createProduct, deleteProduct, getProducts, updateProduct } from "../controllers/productController";
+import { addReviewToProduct, createProduct, deleteProduct, deleteProductReview, getProducts, updateProduct, updateProductReview } from "../controllers/productController";
 
 const router = express.Router();
 
@@ -19,6 +19,10 @@ router.patch("/:id", updateProduct);
 // DELETE /products/:id - Delete a product
 router.delete("/:id", deleteProduct);
 
+// PATCH /products/:productId/reviews/:reviewId - task 18
+router.patch("/:productId/reviews/:reviewId", updateProductReview);
 
+// DELETE /products/:productId/reviews/:reviewId - task 19
+router.delete("/:productId/reviews/:reviewId", deleteProductReview);
 
 export default router;

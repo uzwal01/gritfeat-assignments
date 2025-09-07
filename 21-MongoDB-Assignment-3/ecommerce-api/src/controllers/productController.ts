@@ -169,3 +169,68 @@ export const deleteProduct = async (req: Request, res: Response) => {
         res.status(500).json({ error: "Server Error!" });
     }
 };
+
+
+
+// PATCH /products/:productId/reviews/:reviewId — Update a review - task 18
+export const updateProductReview = async (req: Request, res: Response) => {
+  try {
+    const { productId, reviewId } = req.params;
+    const { rating, comment } = req.body;
+
+    // Validate input
+    if (!rating && !comment) {
+      return res.status(400).json({ error: "Rating or comment must be provided." });
+    }
+
+    const product = await Product.findById(productId);
+    if (!product) {
+      return res.status(404).json({ error: "Product not found." });
+    }
+
+    const review = product.reviews.id(reviewId); // Find subdocument
+    if (!review) {
+      return res.status(404).json({ error: "Review not found." });
+    }
+
+    // Update fields
+    if (rating !== undefined) review.rating = rating;
+    if (comment !== undefined) review.comment = comment;
+
+    await product.save();
+
+    res.json({
+      message: "Review updated successfully.",
+      review,
+    });
+  } catch (error: any) {
+    console.error("Error updating review:", error.message || error);
+    res.status(500).json({ error: "Server Error" });
+  }
+};
+
+
+// DELETE /products/:productId/reviews/:reviewId — Remove a review - task 19
+export const deleteProductReview = async (req: Request, res: Response) => {
+  try {
+    const { productId, reviewId } = req.params;
+
+    const product = await Product.findById(productId);
+    if (!product) {
+      return res.status(404).json({ error: "Product not found." });
+    }
+
+    const review = product.reviews.id(reviewId);
+    if (!review) {
+      return res.status(404).json({ error: "Review not found." });
+    }
+
+    product.reviews.pull({ _id: reviewId }); 
+    await product.save(); // save parent document
+
+    res.json({ message: "Review deleted successfully." });
+  } catch (error: any) {
+    console.error("Error deleting review:", error.message || error);
+    res.status(500).json({ error: "Server Error" });
+  }
+};
