@@ -1,9 +1,14 @@
 import express, { Request, Response } from "express";
-import { PORT } from "./config/env";
+import connectDB, { PORT } from "./config/env";
 import router from "./routes"
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 (() => {
     const app = express();
+
+    connectDB();
 
     app.use(express.json());
 

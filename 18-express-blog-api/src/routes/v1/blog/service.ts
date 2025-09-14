@@ -1,39 +1,75 @@
-import BlogRepository from "./repository";
-import { IBlog, IBlogPayload } from "./types";
 
+import { createPostSchema, updatePostSchema } from './validators';
+import { createPost, findPostsByUser, findAllPosts, findPostById } from './repository';
+import Post from '../../../models/post.model';
 
 const BlogService = {
-    getAll(): IBlog[] {
-        return BlogRepository.getAll();   // Simply runs all blogs
-    },
+  async create(userId: string, body: any) {
+    const parsed = createPostSchema.safeParse(body);
+    if (!parsed.success) {
+      throw new Error('Validation failed');
+    }
 
-    getById(id: number): IBlog {
-        return BlogRepository.getById(id);   // Repository already throws if blog not found
-    },
+    const { title, body: content } = parsed.data;
 
-    deleteById(id: number): void {
-        BlogRepository.deleteById(id);         // Repository throws error if blog not found
-    },
+    const post = await createPost({
+      title,
+    body: content,
+    author: userId,
+    createdBy: userId,
+    updatedBy: userId,
+    });
 
-    create(payload: IBlogPayload): IBlog {
-        if (!payload.title || !payload.content) {
-            throw new Error("Title and content are required.")
-        }
+    return post;
+  },
 
-        return BlogRepository.create(payload);
-    },
+  async getAll(userId: string, role: string) {
+    if (role === 'admin') {
+      return findAllPosts();
+    }
+    return findPostsByUser(userId);
+  },
 
-    updateById(id: number, payload: Partial<IBlogPayload>): IBlog {
-        if (payload.title === "" || payload.content === "") {
-            throw new Error("Title and content cannot be empty.");
-        }
+  async getById(postId: string, userId: string, role: string) {
+    const post = await findPostById(postId, userId, role);
+    if (!post) throw new Error('Post not found or not authorized');
+    return post;
+  },
 
-        const updatedBlog = BlogRepository.updateById(id, payload);
-        if (!updatedBlog) throw new Error("Blog not found to update.");
+  async updateById(postId: string, userId: string, role: string, body: any) {
+    const parsed = updatePostSchema.safeParse(body);
+    if (!parsed.success) {
+      throw new Error("Validation failed");
+    }
 
-        return updatedBlog;
-    },
+    const post = await findPostById(postId, userId, role);
+    if (!post) throw new Error("Post not found or not authorized");
+
+    const { title, body: content } = parsed.data;
+
+    if (title) post.title = title;
+    if (content) post.body = content;
+
+    post.updatedBy = userId;
+
+    await post.save();
+    return post;
+  },
+
+  async deleteById(postId: string, userId: string, role: string) {
+    const post = await findPostById(postId, userId, role);
+    if (!post) throw new Error('Post not found or not authorized');
+
+    await Post.deleteOne({ _id: post._id });
+    return { message: 'Post deleted successfully' };
+  },
 };
 
-
 export default BlogService;
+
+
+
+
+
+
+
